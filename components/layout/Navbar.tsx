@@ -1,0 +1,93 @@
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { Menu } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
+
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/products", label: "Products" },
+  { href: "/quality", label: "Quality & Impact" },
+  { href: "/resources", label: "Resources" },
+  { href: "/contact", label: "Contact" },
+];
+
+export function Navbar() {
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  return (
+    <nav className="bg-black text-white sticky top-0 z-50 border-b border-white/5 shadow-md h-[72px]">
+      <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between py-[2px]">
+        <Link href="/" className="flex items-center shrink-0 h-full py-1">
+          <Image src="/logo.png" alt="AIPL Logo" width={1000} height={1000} className="h-full w-auto object-contain drop-shadow-sm" priority />
+        </Link>
+
+        <div className="hidden lg:flex items-center gap-8">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-sm font-medium transition-colors ${
+                  isActive ? "text-[#B08D57]" : "text-white/80 hover:text-white"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center rounded-lg px-5 py-2 text-sm font-semibold bg-[#B08D57] text-white hover:bg-[#9a7b4c] transition-colors shadow-sm"
+          >
+            Enquire Now
+          </Link>
+        </div>
+
+        <Sheet open={open} onOpenChange={setOpen}>
+          <SheetTrigger
+            className="lg:hidden p-2 -mr-2"
+            aria-label="Open menu"
+          >
+            <Menu className="h-6 w-6" />
+          </SheetTrigger>
+          <SheetContent side="right" className="bg-black text-white border-black w-72">
+            <SheetTitle className="text-white font-heading text-xl mb-6 flex justify-center">
+              <Image src="/logo.png" alt="AIPL Logo" width={400} height={400} className="h-12 w-auto object-contain" />
+            </SheetTitle>
+            <nav className="flex flex-col items-center gap-4">
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className={`text-base font-medium transition-colors py-2 ${
+                      isActive ? "text-[#B08D57]" : "text-white/90 hover:text-white"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
+              <Link
+                href="/contact"
+                onClick={() => setOpen(false)}
+                className="inline-flex items-center justify-center rounded-lg px-4 py-2.5 text-sm font-semibold bg-[#B08D57] text-white hover:bg-[#9a7b4c] transition-colors mt-4 w-full"
+              >
+                Enquire Now
+              </Link>
+            </nav>
+          </SheetContent>
+        </Sheet>
+      </div>
+    </nav>
+  );
+}
