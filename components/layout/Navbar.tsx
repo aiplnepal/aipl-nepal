@@ -24,7 +24,7 @@ export function Navbar() {
     <nav className="bg-black text-white sticky top-0 z-50 border-b border-white/5 shadow-md h-[72px]">
       <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between py-[2px]">
         <Link href="/" className="flex items-center shrink-0 h-full py-1">
-          <Image src="/logo.png" alt="AIPL Logo" width={1000} height={1000} className="h-full w-auto object-contain drop-shadow-sm" priority />
+          <Image src="/logo.webp" alt="AIPL Logo" width={1000} height={1000} className="h-full w-auto object-contain drop-shadow-sm" priority />
         </Link>
 
         <div className="hidden lg:flex items-center gap-8">
@@ -59,7 +59,7 @@ export function Navbar() {
           </SheetTrigger>
           <SheetContent side="right" className="bg-black text-white border-black w-72">
             <SheetTitle className="text-white font-heading text-xl mb-6 flex justify-center">
-              <Image src="/logo.png" alt="AIPL Logo" width={400} height={400} className="h-12 w-auto object-contain" />
+              <Image src="/logo.webp" alt="AIPL Logo" width={400} height={400} className="h-12 w-auto object-contain" />
             </SheetTitle>
             <nav className="flex flex-col items-center gap-4">
               {navLinks.map((link) => {
