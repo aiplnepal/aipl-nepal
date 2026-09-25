@@ -31,4 +31,14 @@ export const testimonials: Testimonial[] = [
     productSlug: "soil-stimulant",
     createdAt: "2024-06-01T00:00:00Z",
   },
+  {
+    id: "test-004",
+    name: "Gopal Thapa",
+    role: "Commercial Farmer",
+    location: "Kavre",
+    quote:
+      "Using AIPL's bio-pesticides has been a game changer for my tomato farm. I am getting better yields while keeping my produce safe and organic.",
+    productSlug: "bio-pesticide",
+    createdAt: "2024-06-01T00:00:00Z",
+  },
 ];
