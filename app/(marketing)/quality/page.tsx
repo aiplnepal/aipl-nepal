@@ -5,9 +5,21 @@ import { AnimateIn } from "@/components/sections/AnimateIn";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Quality & Impact",
+  title: "Quality & Impact — Standards & Certifications",
   description:
-    "Committed to healthier soil and stronger harvests across Nepal. Learn about AIPL's quality standards and impact on farming communities.",
+    "AIPL Nepal is committed to healthier soil and stronger harvests. Learn about our quality-tested formulations, sustainable practices, farmer feedback process, and nationwide impact across Nepal's agricultural communities.",
+  keywords: [
+    "AIPL quality",
+    "Nepal fertilizer quality",
+    "agricultural quality standards Nepal",
+    "sustainable farming Nepal",
+    "soil health Nepal",
+    "AIPL certifications",
+    "eco-friendly fertilizer Nepal",
+  ],
+  alternates: {
+    canonical: "https://aipl.com.np/quality",
+  },
 };
 
 const pillars = [

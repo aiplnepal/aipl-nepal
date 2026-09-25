@@ -5,9 +5,22 @@ import { AnimateIn } from "@/components/sections/AnimateIn";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Products",
+  title: "Products — Fertilizers, Bio Pesticides & Crop Care",
   description:
-    "Every AIPL product is developed and tested for Nepal's soil, crops, and climate — from nutrition to protection to recovery.",
+    "Explore AIPL Nepal's complete product range — fertilizers, bio pesticides, soil stimulants, micronutrients, and crop care products developed and tested specifically for Nepal's soil, crops, and climate.",
+  keywords: [
+    "AIPL products",
+    "Nepal fertilizer products",
+    "bio pesticide Nepal",
+    "soil stimulant Nepal",
+    "micronutrient fertilizer Nepal",
+    "crop care products Nepal",
+    "organic pesticide Nepal",
+    "plant growth regulator Nepal",
+  ],
+  alternates: {
+    canonical: "https://aipl.com.np/products",
+  },
 };
 
 export default async function ProductsPage() {

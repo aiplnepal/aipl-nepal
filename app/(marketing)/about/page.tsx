@@ -4,9 +4,20 @@ import { AnimateIn } from "@/components/sections/AnimateIn";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About Us — Our Story & Mission",
   description:
-    "AIPL is an agricultural investment company producing and supplying fertilizers, bio pesticides, and crop care solutions for Nepal's farmers.",
+    "Learn about AIPL Nepal — an agricultural investment company producing and supplying high-quality fertilizers, bio pesticides, and crop care solutions for Nepal's farmers since day one. Built on Nepal's soil.",
+  keywords: [
+    "about AIPL Nepal",
+    "AIPL history",
+    "Nepal agriculture company",
+    "agricultural investment Nepal",
+    "AIPL mission",
+    "Nepal farming company",
+  ],
+  alternates: {
+    canonical: "https://aipl.com.np/about",
+  },
 };
 
 // PLACEHOLDER: confirm with AIPL before launch — team bios pending client input

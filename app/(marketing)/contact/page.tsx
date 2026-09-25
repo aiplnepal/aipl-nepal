@@ -7,9 +7,21 @@ import { AnimateIn } from "@/components/sections/AnimateIn";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact Us — Get in Touch with AIPL Nepal",
   description:
-    "Get in touch with AIPL for product inquiries, dealer partnerships, or bulk orders. Find a dealer near you.",
+    "Contact AIPL Nepal for fertilizer inquiries, dealer partnerships, bulk orders, or product support. Find an AIPL dealer near you across all 7 provinces of Nepal. Call +977 9863186533.",
+  keywords: [
+    "contact AIPL Nepal",
+    "AIPL phone number",
+    "AIPL dealer Nepal",
+    "fertilizer dealer Nepal",
+    "AIPL Kathmandu contact",
+    "buy fertilizer Nepal",
+    "AIPL dealer network",
+  ],
+  alternates: {
+    canonical: "https://aipl.com.np/contact",
+  },
 };
 
 export default async function ContactPage() {
@@ -65,7 +77,9 @@ export default async function ContactPage() {
                     </div>
                     <div>
                       <p className="font-semibold text-ink text-sm">Phone</p>
-                      <p className="text-muted-text text-sm">+977-01-XXXXXXX</p>
+                      <p className="text-muted-text text-sm">
+                        <a href="tel:+9779863186533" className="hover:text-forest transition-colors">+977 9863186533</a>
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">

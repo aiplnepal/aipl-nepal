@@ -5,9 +5,22 @@ import { AnimateIn } from "@/components/sections/AnimateIn";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Resources",
+  title: "Resources — Farming Guides & Agricultural Advice",
   description:
-    "Guides, articles, and farming advice from AIPL — helping Nepal's farmers grow smarter and stronger.",
+    "Access free farming guides, agricultural tips, and expert advice from AIPL Nepal. Learn soil preparation, crop care, pest management, and fertilizer application techniques for Nepal's diverse growing conditions.",
+  keywords: [
+    "farming guide Nepal",
+    "agricultural tips Nepal",
+    "crop care advice Nepal",
+    "soil preparation Nepal",
+    "pest management Nepal",
+    "fertilizer application guide",
+    "Nepal farming resources",
+    "AIPL resources",
+  ],
+  alternates: {
+    canonical: "https://aipl.com.np/resources",
+  },
 };
 
 export default async function ResourcesPage() {
