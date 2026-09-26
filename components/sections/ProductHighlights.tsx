@@ -13,7 +13,7 @@ export async function ProductHighlights() {
             <p className="text-forest uppercase tracking-[0.2em] text-sm font-semibold mb-3">
               Our Products
             </p>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-ink">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-gray-900">
               What We Grow With
             </h2>
           </div>

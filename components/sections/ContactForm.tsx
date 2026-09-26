@@ -64,10 +64,10 @@ export function ContactForm() {
     return (
       <div className="bg-forest/5 rounded-xl p-8 text-center">
         <CheckCircle className="h-12 w-12 text-forest mx-auto mb-4" />
-        <h3 className="font-heading text-xl font-bold text-ink mb-2">
+        <h3 className="font-heading text-xl font-bold text-gray-900 mb-2">
           Message Sent
         </h3>
-        <p className="text-muted-text">
+        <p className="text-gray-500">
           Thank you for reaching out. We will get back to you shortly.
         </p>
         <button
@@ -83,7 +83,7 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div>
-        <Label htmlFor="name" className="text-sm font-medium text-ink mb-1.5 block">
+        <Label htmlFor="name" className="text-sm font-medium text-gray-900 mb-1.5 block">
           Full Name
         </Label>
         <Input
@@ -93,13 +93,13 @@ export function ContactForm() {
           {...register("name")}
         />
         {errors.name && (
-          <p className="text-sm text-[#C45A3C] mt-1">{errors.name.message}</p>
+          <p className="text-sm text-red-500 mt-1">{errors.name.message}</p>
         )}
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
-          <Label htmlFor="phone" className="text-sm font-medium text-ink mb-1.5 block">
+          <Label htmlFor="phone" className="text-sm font-medium text-gray-900 mb-1.5 block">
             Phone
           </Label>
           <Input
@@ -109,11 +109,11 @@ export function ContactForm() {
             {...register("phone")}
           />
           {errors.phone && (
-            <p className="text-sm text-[#C45A3C] mt-1">{errors.phone.message}</p>
+            <p className="text-sm text-red-500 mt-1">{errors.phone.message}</p>
           )}
         </div>
         <div>
-          <Label htmlFor="email" className="text-sm font-medium text-ink mb-1.5 block">
+          <Label htmlFor="email" className="text-sm font-medium text-gray-900 mb-1.5 block">
             Email
           </Label>
           <Input
@@ -124,13 +124,13 @@ export function ContactForm() {
             {...register("email")}
           />
           {errors.email && (
-            <p className="text-sm text-[#C45A3C] mt-1">{errors.email.message}</p>
+            <p className="text-sm text-red-500 mt-1">{errors.email.message}</p>
           )}
         </div>
       </div>
 
       <div>
-        <Label htmlFor="inquiryType" className="text-sm font-medium text-ink mb-1.5 block">
+        <Label htmlFor="inquiryType" className="text-sm font-medium text-gray-900 mb-1.5 block">
           Inquiry Type
         </Label>
         <Select
@@ -152,16 +152,16 @@ export function ContactForm() {
           </SelectContent>
         </Select>
         {errors.inquiryType && (
-          <p className="text-sm text-[#C45A3C] mt-1">
+          <p className="text-sm text-red-500 mt-1">
             {errors.inquiryType.message}
           </p>
         )}
       </div>
 
       <div>
-        <h3 className="text-sm font-semibold text-ink mb-3 flex items-center gap-2">
+        <h3 className="text-sm font-semibold text-gray-900 mb-3 flex items-center gap-2">
           Your Location
-          <span className="text-muted-text font-normal text-xs">(Province / District / Municipality / Ward)</span>
+          <span className="text-gray-500 font-normal text-xs">(Province / District / Municipality / Ward)</span>
         </h3>
         <LocationSelector
           onProvinceChange={(val) => setValue("province", val, { shouldValidate: true })}
@@ -173,7 +173,7 @@ export function ContactForm() {
       </div>
 
       <div>
-        <Label htmlFor="message" className="text-sm font-medium text-ink mb-1.5 block">
+        <Label htmlFor="message" className="text-sm font-medium text-gray-900 mb-1.5 block">
           Message
         </Label>
         <Textarea
@@ -184,12 +184,12 @@ export function ContactForm() {
           {...register("message")}
         />
         {errors.message && (
-          <p className="text-sm text-[#C45A3C] mt-1">{errors.message.message}</p>
+          <p className="text-sm text-red-500 mt-1">{errors.message.message}</p>
         )}
       </div>
 
       {status === "error" && (
-        <div className="flex items-center gap-2 text-[#C45A3C] text-sm">
+        <div className="flex items-center gap-2 text-red-500 text-sm">
           <AlertCircle className="h-4 w-4" />
           <span>Something went wrong. Please try again.</span>
         </div>

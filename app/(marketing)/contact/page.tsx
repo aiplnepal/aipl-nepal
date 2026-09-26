@@ -38,7 +38,7 @@ export default async function ContactPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-forest-deeper/70" />
         </div>
         <div className="relative max-w-7xl mx-auto px-6 text-center z-10">
           <AnimateIn>
@@ -76,8 +76,8 @@ export default async function ContactPage() {
                       <Phone className="h-4 w-4 text-white" />
                     </div>
                     <div>
-                      <p className="font-semibold text-ink text-sm">Phone</p>
-                      <p className="text-muted-text text-sm">
+                      <p className="font-semibold text-gray-900 text-sm">Phone</p>
+                      <p className="text-gray-500 text-sm">
                         <a href="tel:+9779863186533" className="hover:text-forest transition-colors">+977 9863186533</a>
                       </p>
                     </div>
@@ -87,8 +87,8 @@ export default async function ContactPage() {
                       <Mail className="h-4 w-4 text-white" />
                     </div>
                     <div>
-                      <p className="font-semibold text-ink text-sm">Email</p>
-                      <p className="text-muted-text text-sm">info@aipl.com.np</p>
+                      <p className="font-semibold text-gray-900 text-sm">Email</p>
+                      <p className="text-gray-500 text-sm">info@aipl.com.np</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -96,8 +96,8 @@ export default async function ContactPage() {
                       <MapPin className="h-4 w-4 text-white" />
                     </div>
                     <div>
-                      <p className="font-semibold text-ink text-sm">Address</p>
-                      <p className="text-muted-text text-sm">Kathmandu, Nepal</p>
+                      <p className="font-semibold text-gray-900 text-sm">Address</p>
+                      <p className="text-gray-500 text-sm">Kathmandu, Nepal</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -105,13 +105,13 @@ export default async function ContactPage() {
                       <Clock className="h-4 w-4 text-white" />
                     </div>
                     <div>
-                      <p className="font-semibold text-ink text-sm">
+                      <p className="font-semibold text-gray-900 text-sm">
                         Business Hours
                       </p>
-                      <p className="text-muted-text text-sm">
+                      <p className="text-gray-500 text-sm">
                         Sun – Fri: 9:00 AM – 5:00 PM
                       </p>
-                      <p className="text-muted-text text-sm">
+                      <p className="text-gray-500 text-sm">
                         Saturday: Closed
                       </p>
                     </div>
@@ -119,18 +119,18 @@ export default async function ContactPage() {
                 </div>
 
                 <div className="mt-8 pt-8 border-t border-border">
-                  <h3 className="font-heading text-lg font-bold text-ink mb-3">
+                  <h3 className="font-heading text-lg font-bold text-gray-900 mb-3">
                     Follow Us
                   </h3>
                   <div className="flex gap-4">
                     {/* PLACEHOLDER: confirm with AIPL before launch — replace with real social URLs */}
-                    <a href="#social-facebook" className="text-muted-text hover:text-forest transition-colors text-sm font-medium">
+                    <a href="#social-facebook" className="text-gray-500 hover:text-forest transition-colors text-sm font-medium">
                       Facebook
                     </a>
-                    <a href="#social-instagram" className="text-muted-text hover:text-forest transition-colors text-sm font-medium">
+                    <a href="#social-instagram" className="text-gray-500 hover:text-forest transition-colors text-sm font-medium">
                       Instagram
                     </a>
-                    <a href="#social-youtube" className="text-muted-text hover:text-forest transition-colors text-sm font-medium">
+                    <a href="#social-youtube" className="text-gray-500 hover:text-forest transition-colors text-sm font-medium">
                       YouTube
                     </a>
                   </div>

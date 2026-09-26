@@ -6,7 +6,7 @@ export interface Product {
   description: string;
   useCases: string[];
   icon: string;
-  colorAccent: "forest" | "brown";
+  colorAccent?: string;
   images: string[];
   createdAt: string;
 }

@@ -20,12 +20,11 @@ export function ProductDetailLayout({
   relatedProducts: Product[];
 }) {
   const Icon = iconMap[product.icon] ?? FlaskConical;
-  const accentBg =
-    product.colorAccent === "forest" ? "bg-forest" : "bg-brown";
+  const accentBg = "bg-forest";
 
   return (
     <>
-      <section className="bg-ink text-white py-16 md:py-24">
+      <section className="bg-forest-deeper text-white py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <AnimateIn>
             <div
@@ -46,7 +45,7 @@ export function ProductDetailLayout({
       <section className="py-16 md:py-24">
         <div className="max-w-3xl mx-auto px-6">
           <AnimateIn>
-            <p className="text-ink text-lg leading-relaxed mb-12">
+            <p className="text-gray-900 text-lg leading-relaxed mb-12">
               {product.description}
             </p>
           </AnimateIn>
@@ -60,7 +59,7 @@ export function ProductDetailLayout({
                 {product.useCases.map((useCase) => (
                   <Badge
                     key={useCase}
-                    className="bg-cream text-brown border-0 px-4 py-1.5 text-sm font-medium"
+                    className="bg-forest/5 text-forest-dark border-0 px-4 py-1.5 text-sm font-medium"
                   >
                     {useCase}
                   </Badge>
@@ -75,7 +74,7 @@ export function ProductDetailLayout({
                 How to Use
               </h2>
               {/* PLACEHOLDER: confirm with AIPL before launch — exact dosage and application specifics pending client confirmation */}
-              <ul className="space-y-3 text-ink">
+              <ul className="space-y-3 text-gray-900">
                 <li className="flex items-start gap-3">
                   <span className="w-6 h-6 rounded-full bg-forest text-white text-xs flex items-center justify-center shrink-0 mt-0.5">
                     1
@@ -128,7 +127,7 @@ export function ProductDetailLayout({
       </section>
 
       {relatedProducts.length > 0 && (
-        <section className="bg-cream py-16 md:py-24">
+        <section className="bg-forest/5 py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-6">
             <AnimateIn>
               <h2 className="font-heading text-2xl md:text-3xl font-bold text-forest text-center mb-10">
@@ -138,8 +137,7 @@ export function ProductDetailLayout({
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {relatedProducts.map((p, i) => {
                 const RelatedIcon = iconMap[p.icon] ?? FlaskConical;
-                const relAccentBg =
-                  p.colorAccent === "forest" ? "bg-forest" : "bg-brown";
+                const relAccentBg = "bg-forest";
                 return (
                   <AnimateIn key={p.slug} delay={i * 0.1}>
                     <Link
@@ -154,7 +152,7 @@ export function ProductDetailLayout({
                       <h3 className="font-heading text-lg font-bold text-forest mb-1">
                         {p.name}
                       </h3>
-                      <p className="text-muted-text text-sm">{p.tagline}</p>
+                      <p className="text-gray-500 text-sm">{p.tagline}</p>
                     </Link>
                   </AnimateIn>
                 );

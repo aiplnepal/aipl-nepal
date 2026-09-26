@@ -99,7 +99,7 @@ export default function QualityPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-forest-deeper/70" />
         </div>
         <div className="relative max-w-7xl mx-auto px-6 text-center z-10">
           <AnimateIn>
@@ -116,7 +116,7 @@ export default function QualityPage() {
         </div>
       </section>
 
-      <section className="py-6 bg-ink/90 relative z-10">
+      <section className="py-6 bg-forest-deeper/90 relative z-10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {impactStats.map((stat, i) => (
@@ -138,7 +138,7 @@ export default function QualityPage() {
               <p className="text-forest uppercase tracking-[0.2em] text-sm font-semibold mb-3">
                 Our Standards
               </p>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-ink">
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-gray-900">
                 What Sets Us Apart
               </h2>
             </div>
@@ -150,15 +150,15 @@ export default function QualityPage() {
                   <div className="w-14 h-14 rounded-full bg-forest flex items-center justify-center mb-6">
                     <pillar.icon className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="font-heading text-xl font-bold text-ink mb-3">
+                  <h3 className="font-heading text-xl font-bold text-gray-900 mb-3">
                     {pillar.title}
                   </h3>
-                  <p className="text-muted-text leading-relaxed mb-5">
+                  <p className="text-gray-500 leading-relaxed mb-5">
                     {pillar.description}
                   </p>
                   <ul className="space-y-2">
                     {pillar.highlights.map((h) => (
-                      <li key={h} className="flex items-center gap-2 text-sm text-ink">
+                      <li key={h} className="flex items-center gap-2 text-sm text-gray-900">
                         <CheckCircle className="h-4 w-4 text-forest shrink-0" />
                         {h}
                       </li>
@@ -171,14 +171,14 @@ export default function QualityPage() {
         </div>
       </section>
 
-      <section className="bg-cream py-20 md:py-28">
+      <section className="bg-forest/5 py-20 md:py-28">
         <div className="max-w-5xl mx-auto px-6">
           <AnimateIn>
             <div className="text-center mb-16">
               <p className="text-forest uppercase tracking-[0.2em] text-sm font-semibold mb-3">
                 From Research to Farm
               </p>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-ink">
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-gray-900">
                 Our Process
               </h2>
             </div>
@@ -191,13 +191,13 @@ export default function QualityPage() {
                   <div className="w-20 h-20 rounded-full bg-forest flex items-center justify-center mx-auto mb-5 relative z-10 shadow-lg shadow-forest/15">
                     <step.icon className="h-8 w-8 text-white" />
                   </div>
-                  <span className="text-gold font-bold text-sm mb-2 block">
+                  <span className="text-forest font-bold text-sm mb-2 block">
                     Step {step.step}
                   </span>
-                  <h3 className="font-heading text-lg font-bold text-ink mb-2">
+                  <h3 className="font-heading text-lg font-bold text-gray-900 mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-muted-text text-sm leading-relaxed">
+                  <p className="text-gray-500 text-sm leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -211,10 +211,10 @@ export default function QualityPage() {
         <div className="max-w-7xl mx-auto px-6">
           <AnimateIn>
             <div className="text-center mb-12">
-              <h2 className="font-heading text-2xl md:text-3xl font-bold text-ink mb-3">
+              <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mb-3">
                 Certifications & Standards
               </h2>
-              <p className="text-muted-text max-w-lg mx-auto">
+              <p className="text-gray-500 max-w-lg mx-auto">
                 We adhere to industry standards and are continually working
                 toward formal certifications.
               </p>
@@ -230,13 +230,13 @@ export default function QualityPage() {
               ].map((cert) => (
                 <div
                   key={cert.name}
-                  className="bg-cream rounded-2xl px-8 py-6 text-center min-w-[200px]"
+                  className="bg-forest/5 rounded-2xl px-8 py-6 text-center min-w-[200px]"
                 >
                   <div className="w-12 h-12 rounded-full bg-forest/10 flex items-center justify-center mx-auto mb-3">
                     <CheckCircle className="h-6 w-6 text-forest" />
                   </div>
-                  <p className="font-semibold text-ink text-sm">{cert.name}</p>
-                  <p className="text-muted-text text-xs mt-1">{cert.desc}</p>
+                  <p className="font-semibold text-gray-900 text-sm">{cert.name}</p>
+                  <p className="text-gray-500 text-xs mt-1">{cert.desc}</p>
                 </div>
               ))}
             </div>
@@ -244,7 +244,7 @@ export default function QualityPage() {
         </div>
       </section>
 
-      <section className="bg-ink text-white py-16 md:py-20">
+      <section className="bg-forest-deeper text-white py-16 md:py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <AnimateIn>
             <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">

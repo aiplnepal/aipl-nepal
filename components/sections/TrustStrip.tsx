@@ -18,7 +18,7 @@ const stats = [
 
 export function TrustStrip() {
   return (
-    <section className="bg-cream py-12 md:py-16">
+    <section className="bg-forest/5 py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {stats.map((stat, i) => (
@@ -27,7 +27,7 @@ export function TrustStrip() {
                 <div className="w-12 h-12 rounded-full bg-forest flex items-center justify-center shrink-0">
                   <stat.icon className="h-5 w-5 text-white" />
                 </div>
-                <p className="text-ink font-medium text-base">{stat.text}</p>
+                <p className="text-gray-900 font-medium text-base">{stat.text}</p>
               </div>
             </AnimateIn>
           ))}

@@ -130,17 +130,17 @@ export function DealerLocator({ dealers }: DealerLocatorProps) {
   }, []);
 
   return (
-    <section id="dealers" className="bg-cream py-16 md:py-24">
+    <section id="dealers" className="bg-forest/5 py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-6">
         <AnimateIn>
           <div className="text-center mb-12">
             <p className="text-forest uppercase tracking-[0.2em] text-sm font-semibold mb-3">
               Find a Dealer
             </p>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-ink">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-gray-900">
               Our Dealer Network
             </h2>
-            <p className="text-muted-text mt-3 max-w-lg mx-auto">
+            <p className="text-gray-500 mt-3 max-w-lg mx-auto">
               Select your location to find AIPL dealers near you.
             </p>
           </div>
@@ -150,13 +150,13 @@ export function DealerLocator({ dealers }: DealerLocatorProps) {
           <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-border mb-10">
             <div className="flex items-center gap-2 mb-6">
               <Search className="h-5 w-5 text-forest" />
-              <h3 className="font-heading text-lg font-bold text-ink">
+              <h3 className="font-heading text-lg font-bold text-gray-900">
                 Search by Location
               </h3>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               <div>
-                <Label className="text-sm font-medium text-ink mb-1.5 block">Province</Label>
+                <Label className="text-sm font-medium text-gray-900 mb-1.5 block">Province</Label>
                 <Select onValueChange={handleProvinceChange}>
                   <SelectTrigger className="focus:ring-forest">
                     <SelectValue placeholder="Select province" />
@@ -172,7 +172,7 @@ export function DealerLocator({ dealers }: DealerLocatorProps) {
               </div>
 
               <div>
-                <Label className="text-sm font-medium text-ink mb-1.5 block">District</Label>
+                <Label className="text-sm font-medium text-gray-900 mb-1.5 block">District</Label>
                 <Select
                   key={`d-dealer-${districtKey}`}
                   disabled={!provinceId}
@@ -192,7 +192,7 @@ export function DealerLocator({ dealers }: DealerLocatorProps) {
               </div>
 
               <div>
-                <Label className="text-sm font-medium text-ink mb-1.5 block">Local Level</Label>
+                <Label className="text-sm font-medium text-gray-900 mb-1.5 block">Local Level</Label>
                 <Select
                   key={`m-dealer-${municipalityKey}`}
                   disabled={!districtId}
@@ -212,7 +212,7 @@ export function DealerLocator({ dealers }: DealerLocatorProps) {
               </div>
 
               <div>
-                <Label className="text-sm font-medium text-ink mb-1.5 block">Ward</Label>
+                <Label className="text-sm font-medium text-gray-900 mb-1.5 block">Ward</Label>
                 <Select
                   key={`w-dealer-${wardKey}`}
                   disabled={!municipalityId}
@@ -246,13 +246,13 @@ export function DealerLocator({ dealers }: DealerLocatorProps) {
         {/* PLACEHOLDER: confirm with AIPL before launch — these are placeholder dealer locations pending the client's actual dealer list */}
         {!isFullySelected ? (
           <div className="bg-white rounded-2xl p-12 text-center border border-border shadow-sm">
-            <div className="w-16 h-16 rounded-full bg-cream flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 rounded-full bg-forest/5 flex items-center justify-center mx-auto mb-4">
               <MapPin className="h-7 w-7 text-forest/60" />
             </div>
-            <h3 className="font-heading text-xl font-bold text-ink mb-2">
+            <h3 className="font-heading text-xl font-bold text-gray-900 mb-2">
               Find Your Local Dealer
             </h3>
-            <p className="text-muted-text max-w-md mx-auto">
+            <p className="text-gray-500 max-w-md mx-auto">
               Please complete all selections above (Province, District, Local Level, and Ward) to reveal the authorized AIPL dealer in your specific area.
             </p>
           </div>
@@ -266,7 +266,7 @@ export function DealerLocator({ dealers }: DealerLocatorProps) {
                       <MapPin className="h-5 w-5 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-heading text-lg font-bold text-ink">
+                      <h3 className="font-heading text-lg font-bold text-gray-900">
                         {dealer.name}
                       </h3>
                       <p className="text-forest text-sm font-medium">
@@ -274,20 +274,20 @@ export function DealerLocator({ dealers }: DealerLocatorProps) {
                       </p>
                     </div>
                   </div>
-                  <div className="space-y-2.5 text-sm text-ink border-t border-border pt-4">
+                  <div className="space-y-2.5 text-sm text-gray-900 border-t border-border pt-4">
                     <div className="flex items-start gap-2.5">
-                      <MapPin className="h-4 w-4 text-muted-text shrink-0 mt-0.5" />
+                      <MapPin className="h-4 w-4 text-gray-500 shrink-0 mt-0.5" />
                       <span>
                         Ward {dealer.ward}, {dealer.municipality}, {dealer.district}
                       </span>
                     </div>
                     <div className="flex items-center gap-2.5">
-                      <Phone className="h-4 w-4 text-muted-text shrink-0" />
+                      <Phone className="h-4 w-4 text-gray-500 shrink-0" />
                       <span>{dealer.phone}</span>
                     </div>
                     {dealer.email && (
                       <div className="flex items-center gap-2.5">
-                        <Mail className="h-4 w-4 text-muted-text shrink-0" />
+                        <Mail className="h-4 w-4 text-gray-500 shrink-0" />
                         <span>{dealer.email}</span>
                       </div>
                     )}
@@ -298,13 +298,13 @@ export function DealerLocator({ dealers }: DealerLocatorProps) {
           </div>
         ) : (
           <div className="bg-white rounded-2xl p-12 text-center border border-border">
-            <div className="w-16 h-16 rounded-full bg-cream flex items-center justify-center mx-auto mb-4">
-              <MapPin className="h-7 w-7 text-muted-text" />
+            <div className="w-16 h-16 rounded-full bg-forest/5 flex items-center justify-center mx-auto mb-4">
+              <MapPin className="h-7 w-7 text-gray-500" />
             </div>
-            <h3 className="font-heading text-xl font-bold text-ink mb-2">
+            <h3 className="font-heading text-xl font-bold text-gray-900 mb-2">
               No Dealers Found
             </h3>
-            <p className="text-muted-text max-w-md mx-auto">
+            <p className="text-gray-500 max-w-md mx-auto">
               We don&apos;t have a dealer in this exact location yet. Try broadening
               your search or contact us directly for assistance.
             </p>
@@ -320,7 +320,7 @@ export function DealerLocator({ dealers }: DealerLocatorProps) {
         )}
 
         {hasFilters && filteredDealers.length > 0 && (
-          <p className="text-center text-muted-text text-sm mt-6">
+          <p className="text-center text-gray-500 text-sm mt-6">
             Showing {filteredDealers.length} dealer{filteredDealers.length !== 1 ? "s" : ""} in{" "}
             {selectedMunicipality || selectedDistrict || selectedProvince}
           </p>

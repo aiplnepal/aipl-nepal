@@ -63,7 +63,7 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-black text-white">
+    <footer className="bg-forest-deeper text-white">
       <div className="max-w-7xl mx-auto px-6 py-8 md:py-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           <div>
@@ -80,7 +80,7 @@ export function Footer() {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="text-white/60 hover:text-gold transition-colors"
+                  className="text-white/60 hover:text-forest transition-colors"
                 >
                   <social.icon className="h-5 w-5" />
                 </a>
@@ -89,7 +89,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-heading text-sm font-semibold uppercase tracking-wider text-gold mb-4">
+            <h4 className="font-heading text-sm font-bold uppercase tracking-wider text-white mb-4">
               Quick Links
             </h4>
             <nav className="flex flex-col gap-2">
@@ -107,7 +107,7 @@ export function Footer() {
 
           {/* PLACEHOLDER: confirm with AIPL before launch — replace with real contact details */}
           <div>
-            <h4 className="font-heading text-sm font-semibold uppercase tracking-wider text-gold mb-4">
+            <h4 className="font-heading text-sm font-bold uppercase tracking-wider text-white mb-4">
               Contact
             </h4>
             <div className="flex flex-col gap-3 text-sm text-white/70">

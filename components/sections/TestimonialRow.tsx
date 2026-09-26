@@ -6,14 +6,14 @@ export async function TestimonialRow() {
   const testimonials = await getTestimonials();
 
   return (
-    <section className="py-20 md:py-28 bg-cream">
+    <section className="py-20 md:py-28 bg-forest/5">
       <div className="max-w-7xl mx-auto px-6">
         <AnimateIn>
           <div className="text-center mb-14">
             <p className="text-forest uppercase tracking-[0.2em] text-sm font-semibold mb-3">
               What People Say
             </p>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-ink">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-gray-900">
               Trusted Across Nepal
             </h2>
           </div>
@@ -27,13 +27,13 @@ export async function TestimonialRow() {
               className="snap-center shrink-0 w-[85vw] sm:w-[350px] md:w-[400px] flex"
             >
               <div className="bg-white rounded-xl p-8 shadow-sm w-full flex flex-col hover:shadow-md transition-shadow">
-                <Quote className="h-8 w-8 text-gold/40 mb-4" />
-                <p className="text-ink leading-relaxed flex-1 italic">
+                <Quote className="h-8 w-8 text-forest/30 mb-4" />
+                <p className="text-gray-700 leading-relaxed flex-1 italic">
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <div className="mt-6 pt-4 border-t border-border">
                   <p className="font-semibold text-forest text-sm">{t.name}</p>
-                  <p className="text-muted-text text-xs">
+                  <p className="text-gray-500 text-xs">
                     {t.role} &middot; {t.location}
                   </p>
                 </div>

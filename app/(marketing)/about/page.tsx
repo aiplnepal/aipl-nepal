@@ -39,7 +39,7 @@ export default function AboutPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-forest-deeper/70" />
         </div>
         <div className="relative max-w-7xl mx-auto px-6 text-center z-10">
           <AnimateIn>
@@ -56,14 +56,14 @@ export default function AboutPage() {
       <section className="py-16 md:py-24 bg-white relative z-10">
         <div className="max-w-3xl mx-auto px-6">
           <AnimateIn>
-            <p className="text-ink text-lg leading-relaxed mb-8">
+            <p className="text-gray-900 text-lg leading-relaxed mb-8">
               AIPL is an agricultural investment company producing and supplying
               fertilizers, bio pesticides, and crop care solutions for
               Nepal&apos;s farmers. The company was founded to close the gap
               between imported, generic agri inputs and products actually suited
               to Nepal&apos;s soil types, crops, and climate.
             </p>
-            <p className="text-ink text-lg leading-relaxed mb-8">
+            <p className="text-gray-900 text-lg leading-relaxed mb-8">
               AIPL invests in research, sourcing, and quality control so that
               every product on the shelf earns a farmer&apos;s trust season after
               season. From our formulation process to our dealer network, every
@@ -74,11 +74,11 @@ export default function AboutPage() {
           </AnimateIn>
 
           <AnimateIn delay={0.1}>
-            <div className="bg-cream rounded-xl p-8 mb-8">
+            <div className="bg-forest/5 rounded-xl p-8 mb-8">
               <h2 className="font-heading text-xl font-bold text-forest mb-3">
                 Our Mission
               </h2>
-              <p className="text-ink italic text-lg leading-relaxed font-serif">
+              <p className="text-gray-900 italic text-lg leading-relaxed font-serif">
                 &ldquo;To help every farmer in Nepal grow healthier crops and
                 higher yields, through products built for local conditions and
                 backed by real support.&rdquo;
@@ -88,14 +88,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-cream">
+      <section className="py-16 md:py-24 bg-forest/5">
         <div className="max-w-7xl mx-auto px-6">
           <AnimateIn>
             <div className="text-center mb-14">
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-ink">
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-gray-900">
                 Meet the People Behind AIPL
               </h2>
-              <p className="text-muted-text mt-3">
+              <p className="text-gray-500 mt-3">
                 The team driving Nepal&apos;s agricultural future forward.
               </p>
             </div>
@@ -108,8 +108,8 @@ export default function AboutPage() {
                   <div className="w-24 h-24 rounded-full bg-white flex items-center justify-center mx-auto mb-4 shadow-sm">
                     <Users className="h-10 w-10 text-forest/40" />
                   </div>
-                  <p className="font-semibold text-ink">{member.name}</p>
-                  <p className="text-muted-text text-sm">{member.role}</p>
+                  <p className="font-semibold text-gray-900">{member.name}</p>
+                  <p className="text-gray-500 text-sm">{member.role}</p>
                 </div>
               </AnimateIn>
             ))}

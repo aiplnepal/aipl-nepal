@@ -33,7 +33,7 @@ export function ResourceList({ resources }: { resources: Resource[] }) {
     <div>
       <div className="mb-8 space-y-4">
         <div className="relative max-w-md mx-auto">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-text" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" />
           <Input
             placeholder="Search articles..."
             value={search}
@@ -43,7 +43,7 @@ export function ResourceList({ resources }: { resources: Resource[] }) {
           {search && (
             <button
               onClick={() => setSearch("")}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-text hover:text-ink"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-900"
             >
               <X className="h-4 w-4" />
             </button>
@@ -58,7 +58,7 @@ export function ResourceList({ resources }: { resources: Resource[] }) {
               className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
                 activeCategory === cat
                   ? "bg-forest text-white"
-                  : "bg-cream text-muted-text hover:bg-forest/10 hover:text-forest"
+                  : "bg-forest/5 text-gray-500 hover:bg-forest/10 hover:text-forest"
               }`}
             >
               {cat}
@@ -69,9 +69,9 @@ export function ResourceList({ resources }: { resources: Resource[] }) {
 
       {filtered.length === 0 ? (
         <div className="text-center py-16">
-          <Search className="h-12 w-12 text-muted-text/30 mx-auto mb-4" />
-          <p className="text-muted-text text-lg">No articles found.</p>
-          <p className="text-muted-text text-sm mt-1">Try a different search term or category.</p>
+          <Search className="h-12 w-12 text-gray-500/30 mx-auto mb-4" />
+          <p className="text-gray-500 text-lg">No articles found.</p>
+          <p className="text-gray-500 text-sm mt-1">Try a different search term or category.</p>
         </div>
       ) : (
         <div className="space-y-6">
@@ -89,10 +89,10 @@ export function ResourceList({ resources }: { resources: Resource[] }) {
                   <span className="text-forest text-xs font-semibold uppercase tracking-wider">
                     {resource.category}
                   </span>
-                  <h2 className="font-heading text-xl font-bold text-ink mt-1 mb-2 group-hover:text-forest transition-colors">
+                  <h2 className="font-heading text-xl font-bold text-gray-900 mt-1 mb-2 group-hover:text-forest transition-colors">
                     {resource.title}
                   </h2>
-                  <p className="text-muted-text leading-relaxed mb-4">
+                  <p className="text-gray-500 leading-relaxed mb-4">
                     {resource.excerpt}
                   </p>
                   <span className="inline-flex items-center gap-1 text-sm font-semibold text-forest group-hover:gap-2 transition-all cursor-pointer">
@@ -105,7 +105,7 @@ export function ResourceList({ resources }: { resources: Resource[] }) {
         </div>
       )}
 
-      <p className="text-center text-muted-text text-sm mt-8">
+      <p className="text-center text-gray-500 text-sm mt-8">
         Showing {filtered.length} of {resources.length} articles
       </p>
     </div>

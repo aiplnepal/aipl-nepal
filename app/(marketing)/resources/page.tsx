@@ -37,7 +37,7 @@ export default async function ResourcesPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-forest-deeper/70" />
         </div>
         <div className="relative max-w-7xl mx-auto px-6 text-center z-10">
           <AnimateIn>
@@ -54,7 +54,7 @@ export default async function ResourcesPage() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-cream relative z-10">
+      <section className="py-16 md:py-24 bg-forest/5 relative z-10">
         <div className="max-w-4xl mx-auto px-6">
           <AnimateIn>
             <ResourceList resources={resources} />

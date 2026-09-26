@@ -24,14 +24,14 @@ const reasons = [
 
 export function WhyAIPL() {
   return (
-    <section className="bg-cream py-20 md:py-28">
+    <section className="bg-forest/5 py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-6">
         <AnimateIn>
           <div className="text-center mb-14">
             <p className="text-forest uppercase tracking-[0.2em] text-sm font-semibold mb-3">
               Why Choose Us
             </p>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-ink">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-gray-900">
               Why AIPL
             </h2>
           </div>
@@ -43,10 +43,10 @@ export function WhyAIPL() {
                 <div className="w-16 h-16 rounded-full bg-forest flex items-center justify-center mx-auto mb-5">
                   <reason.icon className="h-7 w-7 text-white" />
                 </div>
-                <h3 className="font-heading text-xl font-bold mb-3 text-ink">
+                <h3 className="font-heading text-xl font-bold mb-3 text-gray-900">
                   {reason.title}
                 </h3>
-                <p className="text-muted-text leading-relaxed">
+                <p className="text-gray-500 leading-relaxed">
                   {reason.description}
                 </p>
               </div>

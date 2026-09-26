@@ -42,7 +42,7 @@ export default async function ResourcePage({
 
   return (
     <>
-      <section className="bg-ink text-white py-16 md:py-24">
+      <section className="bg-forest-deeper text-white py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-6">
           <AnimateIn>
             <Link
@@ -73,11 +73,11 @@ export default async function ResourcePage({
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-cream">
+      <section className="py-16 md:py-24 bg-forest/5">
         <div className="max-w-3xl mx-auto px-6">
           <AnimateIn>
             <div 
-              className="max-w-none text-muted-text text-lg leading-relaxed [&>p]:mb-6 [&>h3]:font-heading [&>h3]:text-2xl [&>h3]:font-bold [&>h3]:text-ink [&>h3]:mt-10 [&>h3]:mb-4 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:mb-6 [&>ul>li]:mb-2 [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:mb-6 [&>ol>li]:mb-2 [&>strong]:text-ink [&>strong]:font-semibold"
+              className="max-w-none text-gray-500 text-lg leading-relaxed [&>p]:mb-6 [&>h3]:font-heading [&>h3]:text-2xl [&>h3]:font-bold [&>h3]:text-gray-900 [&>h3]:mt-10 [&>h3]:mb-4 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:mb-6 [&>ul>li]:mb-2 [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:mb-6 [&>ol>li]:mb-2 [&>strong]:text-gray-900 [&>strong]:font-semibold"
               dangerouslySetInnerHTML={{ __html: resource.content || "<p>Content coming soon.</p>" }}
             />
           </AnimateIn>

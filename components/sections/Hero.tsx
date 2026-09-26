@@ -7,7 +7,7 @@ export function Hero() {
   return (
     <section className="bg-white py-12 md:py-16 lg:py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(57,181,74,0.06)_0%,_transparent_60%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(176,141,87,0.05)_0%,_transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(57,181,74,0.04)_0%,_transparent_60%)]" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -18,14 +18,14 @@ export function Hero() {
               </p>
             </AnimateIn>
             <AnimateIn delay={0.1}>
-              <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[3.75rem] font-bold leading-[1.1] mb-4 md:mb-6 text-ink">
+              <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[3.75rem] font-bold leading-[1.1] mb-4 md:mb-6 text-gray-900">
                 Growing Nepal,
                 <br />
                 <span className="text-forest">One Field at a Time</span>
               </h1>
             </AnimateIn>
             <AnimateIn delay={0.2}>
-              <p className="text-muted-text text-base sm:text-lg md:text-xl mb-6 md:mb-8 leading-relaxed">
+              <p className="text-gray-500 text-base sm:text-lg md:text-xl mb-6 md:mb-8 leading-relaxed">
                 Fertilizers, bio pesticides, and crop care products trusted by
                 farmers and dealers across Nepal.
               </p>

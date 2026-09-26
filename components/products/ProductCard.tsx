@@ -12,8 +12,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 
 export function ProductCard({ product }: { product: Product }) {
   const Icon = iconMap[product.icon] ?? FlaskConical;
-  const accentBg =
-    product.colorAccent === "forest" ? "bg-forest" : "bg-brown";
+  const accentBg = "bg-forest";
 
   return (
     <Link
@@ -25,10 +24,10 @@ export function ProductCard({ product }: { product: Product }) {
       >
         <Icon className="h-7 w-7 text-white" />
       </div>
-      <h3 className="font-heading text-xl font-bold text-ink mb-2 group-hover:text-forest transition-colors">
+      <h3 className="font-heading text-xl font-bold text-gray-900 mb-2 group-hover:text-forest transition-colors">
         {product.name}
       </h3>
-      <p className="text-muted-text text-sm mb-6 flex-1">{product.tagline}</p>
+      <p className="text-gray-500 text-sm mb-6 flex-1">{product.tagline}</p>
       <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-forest group-hover:gap-2.5 transition-all">
         View Details <ArrowRight className="h-4 w-4" />
       </span>

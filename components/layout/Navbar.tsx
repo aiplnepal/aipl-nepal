@@ -21,7 +21,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-black text-white sticky top-0 z-50 border-b border-white/5 shadow-md h-[72px]">
+    <nav className="bg-forest-deeper text-white sticky top-0 z-50 border-b border-white/5 shadow-md h-[72px]">
       <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between py-[2px]">
         <Link href="/" className="flex items-center shrink-0 h-full py-1">
           <Image src="/logo.webp" alt="AIPL Logo" width={1000} height={1000} className="h-full w-auto object-contain drop-shadow-sm" priority />
@@ -35,7 +35,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={`text-sm font-medium transition-colors ${
-                  isActive ? "text-[#B08D57]" : "text-white/80 hover:text-white"
+                  isActive ? "text-white font-bold underline underline-offset-8 decoration-2 decoration-forest" : "text-white/80 hover:text-white"
                 }`}
               >
                 {link.label}
@@ -44,7 +44,7 @@ export function Navbar() {
           })}
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center rounded-lg px-5 py-2 text-sm font-semibold bg-[#B08D57] text-white hover:bg-[#9a7b4c] transition-colors shadow-sm"
+            className="inline-flex items-center justify-center rounded-lg px-5 py-2 text-sm font-semibold bg-forest text-white hover:bg-forest-dark transition-colors shadow-sm"
           >
             Enquire Now
           </Link>
@@ -57,7 +57,7 @@ export function Navbar() {
           >
             <Menu className="h-6 w-6" />
           </SheetTrigger>
-          <SheetContent side="right" className="bg-black text-white border-black w-72">
+          <SheetContent side="right" className="bg-forest-deeper text-white border-forest-deeper w-72">
             <SheetTitle className="text-white font-heading text-xl mb-6 flex justify-center">
               <Image src="/logo.webp" alt="AIPL Logo" width={400} height={400} className="h-12 w-auto object-contain" />
             </SheetTitle>
@@ -70,7 +70,7 @@ export function Navbar() {
                     href={link.href}
                     onClick={() => setOpen(false)}
                     className={`text-base font-medium transition-colors py-2 ${
-                      isActive ? "text-[#B08D57]" : "text-white/90 hover:text-white"
+                      isActive ? "text-white font-bold underline underline-offset-8 decoration-2 decoration-forest" : "text-white/90 hover:text-white"
                     }`}
                   >
                     {link.label}
@@ -80,7 +80,7 @@ export function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setOpen(false)}
-                className="inline-flex items-center justify-center rounded-lg px-4 py-2.5 text-sm font-semibold bg-[#B08D57] text-white hover:bg-[#9a7b4c] transition-colors mt-4 w-full"
+                className="inline-flex items-center justify-center rounded-lg px-4 py-2.5 text-sm font-semibold bg-forest text-white hover:bg-forest-dark transition-colors mt-4 w-full"
               >
                 Enquire Now
               </Link>

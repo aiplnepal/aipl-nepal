@@ -4,13 +4,13 @@ import { AnimateIn } from "./AnimateIn";
 
 export function CTABanner() {
   return (
-    <section className="bg-forest/5 text-ink py-20 md:py-24">
+    <section className="bg-forest/5 text-gray-900 py-20 md:py-24">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <AnimateIn>
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">
             Ready to Grow with AIPL?
           </h2>
-          <p className="text-muted-text text-lg mb-10 max-w-2xl mx-auto">
+          <p className="text-gray-500 text-lg mb-10 max-w-2xl mx-auto">
             Get in touch with our team or find a dealer near you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

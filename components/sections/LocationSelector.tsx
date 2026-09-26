@@ -116,7 +116,7 @@ export function LocationSelector({
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
       <div>
-        <Label className="text-sm font-medium text-ink mb-1.5 block">Province</Label>
+        <Label className="text-sm font-medium text-gray-900 mb-1.5 block">Province</Label>
         <Select onValueChange={handleProvinceChange}>
           <SelectTrigger className="focus:ring-forest">
             <SelectValue placeholder="Select province" />
@@ -130,12 +130,12 @@ export function LocationSelector({
           </SelectContent>
         </Select>
         {errors?.province && (
-          <p className="text-sm text-[#C45A3C] mt-1">{errors.province.message}</p>
+          <p className="text-sm text-red-500 mt-1">{errors.province.message}</p>
         )}
       </div>
 
       <div>
-        <Label className="text-sm font-medium text-ink mb-1.5 block">District</Label>
+        <Label className="text-sm font-medium text-gray-900 mb-1.5 block">District</Label>
         <Select
           key={`district-${districtKey}`}
           disabled={!provinceId}
@@ -153,12 +153,12 @@ export function LocationSelector({
           </SelectContent>
         </Select>
         {errors?.district && (
-          <p className="text-sm text-[#C45A3C] mt-1">{errors.district.message}</p>
+          <p className="text-sm text-red-500 mt-1">{errors.district.message}</p>
         )}
       </div>
 
       <div>
-        <Label className="text-sm font-medium text-ink mb-1.5 block">Local Level</Label>
+        <Label className="text-sm font-medium text-gray-900 mb-1.5 block">Local Level</Label>
         <Select
           key={`municipality-${municipalityKey}`}
           disabled={!districtId}
@@ -176,12 +176,12 @@ export function LocationSelector({
           </SelectContent>
         </Select>
         {errors?.municipality && (
-          <p className="text-sm text-[#C45A3C] mt-1">{errors.municipality.message}</p>
+          <p className="text-sm text-red-500 mt-1">{errors.municipality.message}</p>
         )}
       </div>
 
       <div>
-        <Label className="text-sm font-medium text-ink mb-1.5 block">Ward</Label>
+        <Label className="text-sm font-medium text-gray-900 mb-1.5 block">Ward</Label>
         <Select
           key={`ward-${wardKey}`}
           disabled={!municipalityId}
@@ -199,7 +199,7 @@ export function LocationSelector({
           </SelectContent>
         </Select>
         {errors?.ward && (
-          <p className="text-sm text-[#C45A3C] mt-1">{errors.ward.message}</p>
+          <p className="text-sm text-red-500 mt-1">{errors.ward.message}</p>
         )}
       </div>
     </div>
