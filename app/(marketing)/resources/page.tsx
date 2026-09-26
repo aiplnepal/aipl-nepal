@@ -28,8 +28,8 @@ export default async function ResourcesPage() {
 
   return (
     <>
-      <section className="relative text-white py-32 md:py-48">
-        <div className="fixed top-[72px] left-0 w-full h-[60vh] -z-10">
+      <section className="relative text-white py-32 md:py-48 overflow-hidden">
+        <div className="absolute inset-0 -z-10">
           <Image
             src="/illustrations/resources-hero-v2.webp"
             alt="Resources"
@@ -37,7 +37,7 @@ export default async function ResourcesPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-forest-deeper/70" />
+          <div className="absolute inset-0 bg-black/45" />
         </div>
         <div className="relative max-w-7xl mx-auto px-6 text-center z-10">
           <AnimateIn>
@@ -54,7 +54,7 @@ export default async function ResourcesPage() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-forest/5 relative z-10">
+      <section className="py-16 md:py-24 bg-white relative z-10">
         <div className="max-w-4xl mx-auto px-6">
           <AnimateIn>
             <ResourceList resources={resources} />

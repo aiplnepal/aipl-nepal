@@ -30,8 +30,8 @@ const team = [
 export default function AboutPage() {
   return (
     <>
-      <section className="relative text-white py-32 md:py-48">
-        <div className="fixed top-[72px] left-0 w-full h-[60vh] -z-10">
+      <section className="relative text-white py-32 md:py-48 overflow-hidden">
+        <div className="absolute inset-0 -z-10">
           <Image
             src="/illustrations/about-hero-v2.webp"
             alt="About AIPL"
@@ -39,7 +39,7 @@ export default function AboutPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-forest-deeper/70" />
+          <div className="absolute inset-0 bg-black/45" />
         </div>
         <div className="relative max-w-7xl mx-auto px-6 text-center z-10">
           <AnimateIn>
@@ -74,7 +74,7 @@ export default function AboutPage() {
           </AnimateIn>
 
           <AnimateIn delay={0.1}>
-            <div className="bg-forest/5 rounded-xl p-8 mb-8">
+            <div className="bg-forest/5 rounded-xl p-8 mb-8 border border-forest/10">
               <h2 className="font-heading text-xl font-bold text-forest mb-3">
                 Our Mission
               </h2>
@@ -88,7 +88,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-forest/5">
+      <section className="py-16 md:py-24 bg-white relative z-10 border-t border-border">
         <div className="max-w-7xl mx-auto px-6">
           <AnimateIn>
             <div className="text-center mb-14">
@@ -104,12 +104,12 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
             {team.map((member, i) => (
               <AnimateIn key={i} delay={i * 0.1}>
-                <div className="text-center">
-                  <div className="w-24 h-24 rounded-full bg-white flex items-center justify-center mx-auto mb-4 shadow-sm">
-                    <Users className="h-10 w-10 text-forest/40" />
+                <div className="text-center p-6 rounded-2xl bg-forest/5 border border-forest/10 hover:shadow-md transition-shadow">
+                  <div className="w-24 h-24 rounded-full bg-white flex items-center justify-center mx-auto mb-4 shadow-sm border border-border">
+                    <Users className="h-10 w-10 text-forest" />
                   </div>
-                  <p className="font-semibold text-gray-900">{member.name}</p>
-                  <p className="text-gray-500 text-sm">{member.role}</p>
+                  <p className="font-semibold text-gray-900 text-lg">{member.name}</p>
+                  <p className="text-forest text-sm font-medium mt-1">{member.role}</p>
                 </div>
               </AnimateIn>
             ))}

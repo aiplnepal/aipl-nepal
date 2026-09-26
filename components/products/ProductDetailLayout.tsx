@@ -42,7 +42,7 @@ export function ProductDetailLayout({
         </div>
       </section>
 
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-white">
         <div className="max-w-3xl mx-auto px-6">
           <AnimateIn>
             <p className="text-gray-900 text-lg leading-relaxed mb-12">
@@ -127,7 +127,7 @@ export function ProductDetailLayout({
       </section>
 
       {relatedProducts.length > 0 && (
-        <section className="bg-forest/5 py-16 md:py-24">
+        <section className="bg-white py-16 md:py-24 border-t border-border">
           <div className="max-w-7xl mx-auto px-6">
             <AnimateIn>
               <h2 className="font-heading text-2xl md:text-3xl font-bold text-forest text-center mb-10">
