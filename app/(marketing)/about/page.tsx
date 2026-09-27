@@ -56,32 +56,47 @@ export default function AboutPage() {
       <section className="py-16 md:py-24 bg-white relative z-10">
         <div className="max-w-3xl mx-auto px-6">
           <AnimateIn>
-            <p className="text-gray-900 text-lg leading-relaxed mb-8">
-              AIPL is an agricultural investment company producing and supplying
-              fertilizers, bio pesticides, and crop care solutions for
-              Nepal&apos;s farmers. The company was founded to close the gap
-              between imported, generic agri inputs and products actually suited
-              to Nepal&apos;s soil types, crops, and climate.
+            <p className="text-gray-900 text-lg leading-relaxed mb-6">
+              The development of human civilization is deeply rooted in agriculture; consequently, the economic empowerment of marginalized and economically disadvantaged populations through active participation in agricultural systems remains fundamental to sustainable development. Agriculture Investment Private Limited (AIPL) is dedicated to revitalizing the agricultural sector by fostering inclusive participation, integrating modern technologies, and promoting environmentally sustainable practices.
             </p>
-            <p className="text-gray-900 text-lg leading-relaxed mb-8">
-              AIPL invests in research, sourcing, and quality control so that
-              every product on the shelf earns a farmer&apos;s trust season after
-              season. From our formulation process to our dealer network, every
-              part of the business is designed to serve the working farmer —
-              because better inputs lead to better harvests, and better harvests
-              build stronger communities.
+            <p className="text-gray-900 text-lg leading-relaxed mb-12">
+              AIPL produces bio-fertilizers from indigenous resources and manufactures bio-liquid fertilizers in advanced microbial laboratories. Through continuous education programs and field-based technical support, layman farmers are trained in the effective use of bio-fertilizers and encouraged to adopt organic crop production methods. Recognizing that farmers have long been undervalued in Nepali society, AIPL is dedicated to transforming this perception by positioning farmers as key contributors to national development.
             </p>
           </AnimateIn>
 
           <AnimateIn delay={0.1}>
-            <div className="bg-forest/5 rounded-xl p-8 mb-8 border border-forest/10">
-              <h2 className="font-heading text-xl font-bold text-forest mb-3">
-                Our Mission
+            <div className="bg-forest/5 rounded-xl p-8 mb-12 border border-forest/10">
+              <h2 className="font-heading text-2xl font-bold text-forest mb-4">
+                Our Campaigns & Operations
               </h2>
-              <p className="text-gray-900 italic text-lg leading-relaxed font-serif">
-                &ldquo;To help every farmer in Nepal grow healthier crops and
-                higher yields, through products built for local conditions and
-                backed by real support.&rdquo;
+              <p className="text-gray-900 text-lg leading-relaxed mb-4">
+                Under its nationwide campaign, Agriculture Revitalizing Sustainable Development for Layman Farmers (ARSD), AIPL operates across all wards in Nepal&apos;s seven provinces and seventy-seven districts, covering a network of six thousand seven hundred forty-three government ward offices.
+              </p>
+              <p className="text-gray-900 text-lg leading-relaxed mb-4">
+                AIPL is a pioneer private company in Nepal specializing in the production of solid bio-fertilizers derived from digested sewage sludge and industrial-scale liquid bio-fertilizers. The company treats soil health, natural resources, and indigenous knowledge as valuable assets and focuses on transforming them into sustainable economic opportunities for local communities. AIPL also manages the marketing of agricultural products produced by layman farmers, ensuring fair retail pricing and reliable market access.
+              </p>
+              <p className="text-gray-900 text-lg leading-relaxed">
+                The company supplies both indigenous and hybrid seeds and actively promotes organic farming practices. It facilitates the marketing of agricultural products from high Himalayan regions, ensuring competitive value in both national and international markets. Layman farmers receive training in the processing of flowers, fruits, and herbs harvested from surrounding forests and are supported with modern agricultural tools. In addition, AIPL provides essential daily goods required by farming households.
+              </p>
+            </div>
+          </AnimateIn>
+          
+          <AnimateIn delay={0.2}>
+            <h2 className="font-heading text-2xl font-bold text-gray-900 mb-4">
+              Smart Farming & Technology
+            </h2>
+            <p className="text-gray-900 text-lg leading-relaxed mb-12">
+              To further enhance productivity and sustainability, AIPL implements the Smart Farming Management System (SFMS) using Internet of Things (IoT) technology. This system improves agricultural productivity, optimizes resource utilization, reduces operational costs, and minimizes environmental impact.
+            </p>
+          </AnimateIn>
+          
+          <AnimateIn delay={0.3}>
+            <div className="bg-gray-50 rounded-xl p-8 border border-border">
+              <h2 className="font-heading text-2xl font-bold text-gray-900 mb-4">
+                Company Details
+              </h2>
+              <p className="text-gray-900 text-lg leading-relaxed">
+                Agriculture Investment Private Limited is registered under the Government of Nepal (Company Registration No. 241861/077/078) and obtained its company registration certificate on 30th Ashad 2077 (July 14, 2020). The company is registered with the Office of the Company Registrar under the Ministry of Industry, Commerce, and Supplies, Government of Nepal (Industry Registration No. 2503/36/063/063). AIPL currently operates from Lalitpur Ward No. 22 and Kathmandu Metropolitan City Ward No. 03 and has received certifications from multiple government agencies, including cottage and small industries offices, local authorities, and provincial governments.
               </p>
             </div>
           </AnimateIn>
