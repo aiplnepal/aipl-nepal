@@ -59,9 +59,7 @@ export function Navbar() {
             <Menu className="h-6 w-6" />
           </SheetTrigger>
           <SheetContent side="right" className="bg-forest-deeper text-white border-forest-deeper w-72">
-            <SheetTitle className="text-white font-heading text-xl mb-6 flex justify-center">
-              <Image src="/logo.webp" alt="AIPL Logo" width={400} height={400} className="h-12 w-auto object-contain" />
-            </SheetTitle>
+            <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
             <nav className="flex flex-col items-center gap-4">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
