@@ -34,7 +34,7 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors ${
+                className={`text-base font-medium transition-colors ${
                   isActive ? "text-white font-bold underline underline-offset-8 decoration-2 decoration-forest" : "text-white/80 hover:text-white"
                 }`}
               >
@@ -42,12 +42,13 @@ export function Navbar() {
               </Link>
             );
           })}
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center rounded-lg px-5 py-2 text-sm font-semibold bg-forest text-white hover:bg-forest-dark transition-colors shadow-sm"
+          <button
+            type="button"
+            className="inline-flex items-center justify-center rounded-lg px-5 py-2 text-base font-semibold bg-white text-forest hover:bg-white/90 transition-colors shadow-sm cursor-pointer"
           >
-            Enquire Now
-          </Link>
+            Job Apply
+          </button>
+
         </div>
 
         <Sheet open={open} onOpenChange={setOpen}>
@@ -77,13 +78,14 @@ export function Navbar() {
                   </Link>
                 );
               })}
-              <Link
-                href="/contact"
+              <button
+                type="button"
                 onClick={() => setOpen(false)}
-                className="inline-flex items-center justify-center rounded-lg px-4 py-2.5 text-sm font-semibold bg-forest text-white hover:bg-forest-dark transition-colors mt-4 w-full"
+                className="inline-flex items-center justify-center rounded-lg px-4 py-2.5 text-base font-semibold bg-white text-forest hover:bg-white/90 transition-colors mt-4 w-full cursor-pointer"
               >
-                Enquire Now
-              </Link>
+                Job Apply
+              </button>
+
             </nav>
           </SheetContent>
         </Sheet>

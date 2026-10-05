@@ -12,10 +12,10 @@
   --font-mono: var(--font-geist-mono);
   --font-heading: var(--font-source-serif);
 
-  /* Brand colors — #39b54a green + white only */
+  /* Brand colors — #39b54a green + #ffffff white only */
   --color-forest: #39b54a;
-  --color-forest-dark: #2d9a3d;
-  --color-forest-deeper: #1e7a2e;
+  --color-forest-dark: #39b54a;
+  --color-forest-deeper: #39b54a;
 
   /* shadcn semantic mapping */
   --color-sidebar-ring: var(--sidebar-ring);
@@ -66,11 +66,11 @@
   --primary: #39b54a;
   --primary-foreground: #FFFFFF;
   --secondary: #f0fdf4;
-  --secondary-foreground: #1e7a2e;
+  --secondary-foreground: #39b54a;
   --muted: #f9fafb;
   --muted-foreground: #6b7280;
   --accent: #dcfce7;
-  --accent-foreground: #1e7a2e;
+  --accent-foreground: #39b54a;
   --destructive: #ef4444;
   --border: #e5e7eb;
   --input: #e5e7eb;
@@ -81,12 +81,12 @@
   --chart-4: #f0fdf4;
   --chart-5: #166534;
   --radius: 0.75rem;
-  --sidebar: #1e7a2e;
+  --sidebar: #39b54a;
   --sidebar-foreground: #FFFFFF;
   --sidebar-primary: #39b54a;
   --sidebar-primary-foreground: #FFFFFF;
   --sidebar-accent: #dcfce7;
-  --sidebar-accent-foreground: #1e7a2e;
+  --sidebar-accent-foreground: #39b54a;
   --sidebar-border: #39b54a;
   --sidebar-ring: #39b54a;
 }
