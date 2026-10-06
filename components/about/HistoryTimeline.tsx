@@ -23,11 +23,15 @@ export function HistoryTimeline({ dict }: { dict: any }) {
           
           {/* Timeline Item 1 */}
           <AnimateIn delay={0.1}>
-            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-forest text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+            <div className="relative flex items-center justify-between md:justify-center group is-active">
+              {/* Left space for desktop */}
+              <div className="hidden md:block md:w-[calc(50%-2.5rem)]"></div>
+              
+              <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-forest text-white shadow shrink-0 md:absolute md:left-1/2 md:-translate-x-1/2 z-10">
                 <Building2 className="w-4 h-4" />
               </div>
-              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-gray-50 border border-gray-100 shadow-sm">
+              
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-gray-50 border border-gray-100 shadow-sm md:mr-auto">
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="font-bold text-gray-900 text-lg">{dict.about.historyTimeline.items[0].title}</h3>
                   <span className="text-forest font-semibold text-sm">{dict.about.historyTimeline.items[0].date}</span>
@@ -41,12 +45,9 @@ export function HistoryTimeline({ dict }: { dict: any }) {
 
           {/* Timeline Item 2 */}
           <AnimateIn delay={0.2}>
-            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-gray-200 text-gray-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
-                <FileText className="w-4 h-4" />
-              </div>
-              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-gray-50 border border-gray-100 shadow-sm">
-                <div className="flex items-center justify-between mb-2">
+            <div className="relative flex items-center justify-between md:justify-center group is-active">
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-gray-50 border border-gray-100 shadow-sm md:ml-auto md:text-right">
+                <div className="flex items-center justify-between mb-2 md:flex-row-reverse">
                   <h3 className="font-bold text-gray-900 text-lg">{dict.about.historyTimeline.items[1].title}</h3>
                   <span className="text-gray-500 font-semibold text-sm">{dict.about.historyTimeline.items[1].date}</span>
                 </div>
@@ -57,16 +58,27 @@ export function HistoryTimeline({ dict }: { dict: any }) {
                   Industry {dict.about.historyTimeline.items[1].title} No. 2503/36/063/063
                 </p>
               </div>
+              
+              <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-gray-200 text-gray-500 shadow shrink-0 md:absolute md:left-1/2 md:-translate-x-1/2 z-10 -order-1 md:order-none">
+                <FileText className="w-4 h-4" />
+              </div>
+              
+              {/* Right space for desktop */}
+              <div className="hidden md:block md:w-[calc(50%-2.5rem)]"></div>
             </div>
           </AnimateIn>
 
           {/* Timeline Item 3 */}
           <AnimateIn delay={0.3}>
-            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-gray-200 text-gray-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+            <div className="relative flex items-center justify-between md:justify-center group is-active">
+              {/* Left space for desktop */}
+              <div className="hidden md:block md:w-[calc(50%-2.5rem)]"></div>
+              
+              <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-gray-200 text-gray-500 shadow shrink-0 md:absolute md:left-1/2 md:-translate-x-1/2 z-10">
                 <CheckCircle className="w-4 h-4" />
               </div>
-              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-gray-50 border border-gray-100 shadow-sm">
+              
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-gray-50 border border-gray-100 shadow-sm md:mr-auto">
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="font-bold text-gray-900 text-lg">{dict.about.historyTimeline.items[2].title}</h3>
                   <span className="text-gray-500 font-semibold text-sm">{dict.about.historyTimeline.items[2].date}</span>

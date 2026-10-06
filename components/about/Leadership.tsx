@@ -23,7 +23,7 @@ export function Leadership({ dict }: { dict: any }) {
                 />
               </div>
               <div className="p-8 text-center">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Leadership</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Prem Lama</h3>
                 <p className="text-forest font-medium mb-6 uppercase tracking-wider text-sm">Managing Director</p>
                 <p className="text-gray-600 leading-relaxed text-sm">
                   {dict.about.leadership.description}
