@@ -23,7 +23,7 @@ export function HistoryTimeline({ dict }: { dict: any }) {
           
           {/* Timeline Item 1 */}
           <AnimateIn delay={0.1}>
-            <div className="relative flex items-center justify-between md:justify-center group is-active">
+            <div className="relative flex items-center justify-between group is-active">
               {/* Left space for desktop */}
               <div className="hidden md:block md:w-[calc(50%-2.5rem)]"></div>
               
@@ -45,7 +45,7 @@ export function HistoryTimeline({ dict }: { dict: any }) {
 
           {/* Timeline Item 2 */}
           <AnimateIn delay={0.2}>
-            <div className="relative flex items-center justify-between md:justify-center group is-active">
+            <div className="relative flex items-center justify-between group is-active">
               <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-gray-50 border border-gray-100 shadow-sm md:ml-auto md:text-right">
                 <div className="flex items-center justify-between mb-2 md:flex-row-reverse">
                   <h3 className="font-bold text-gray-900 text-lg">{dict.about.historyTimeline.items[1].title}</h3>
@@ -70,7 +70,7 @@ export function HistoryTimeline({ dict }: { dict: any }) {
 
           {/* Timeline Item 3 */}
           <AnimateIn delay={0.3}>
-            <div className="relative flex items-center justify-between md:justify-center group is-active">
+            <div className="relative flex items-center justify-between group is-active">
               {/* Left space for desktop */}
               <div className="hidden md:block md:w-[calc(50%-2.5rem)]"></div>
               

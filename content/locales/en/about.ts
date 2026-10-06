@@ -51,7 +51,7 @@ export const about = {
     title: "Institutional History",
     items: [
       { title: "Foundation", date: "2020", description: "Established on July 14, 2020 (30th Ashad 2077) to bridge the gap between traditional farming and modern agricultural tech." },
-      { title: "Registration", date: "Pending", description1: "Company Registration No. 241861/077/078", description2: "Industry Registration No. 2503/36/063/063" },
+      { title: "Registration", date: "Completed", description1: "Company Registration No. 241861/077/078", description2: "Industry Registration No. 2503/36/063/063" },
       { title: "Operations", date: "Active", description: "Operating from Lalitpur Ward No. 22 and Kathmandu Metropolitan City Ward No. 03, driving nationwide expansion." }
     ]
   },
