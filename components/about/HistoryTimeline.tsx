@@ -31,7 +31,7 @@ export function HistoryTimeline({ dict }: { dict: any }) {
                 <Building2 className="w-4 h-4" />
               </div>
               
-              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-gray-50 border border-gray-100 shadow-sm md:mr-auto">
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-gray-50 border border-gray-100 shadow-sm">
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="font-bold text-gray-900 text-lg">{dict.about.historyTimeline.items[0].title}</h3>
                   <span className="text-forest font-semibold text-sm">{dict.about.historyTimeline.items[0].date}</span>
@@ -46,7 +46,7 @@ export function HistoryTimeline({ dict }: { dict: any }) {
           {/* Timeline Item 2 */}
           <AnimateIn delay={0.2}>
             <div className="relative flex items-center justify-between group is-active">
-              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-gray-50 border border-gray-100 shadow-sm md:ml-auto md:text-right">
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-gray-50 border border-gray-100 shadow-sm md:text-right">
                 <div className="flex items-center justify-between mb-2 md:flex-row-reverse">
                   <h3 className="font-bold text-gray-900 text-lg">{dict.about.historyTimeline.items[1].title}</h3>
                   <span className="text-gray-500 font-semibold text-sm">{dict.about.historyTimeline.items[1].date}</span>
@@ -78,7 +78,7 @@ export function HistoryTimeline({ dict }: { dict: any }) {
                 <CheckCircle className="w-4 h-4" />
               </div>
               
-              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-gray-50 border border-gray-100 shadow-sm md:mr-auto">
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-gray-50 border border-gray-100 shadow-sm">
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="font-bold text-gray-900 text-lg">{dict.about.historyTimeline.items[2].title}</h3>
                   <span className="text-gray-500 font-semibold text-sm">{dict.about.historyTimeline.items[2].date}</span>
