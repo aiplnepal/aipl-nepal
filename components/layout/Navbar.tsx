@@ -19,7 +19,7 @@ export function Navbar({ dict, locale }: { dict: any; locale: string }) {
     { href: `/${locale}/products`, label: dict.common.nav.products },
     { href: `/${locale}/quality`, label: dict.common.nav.quality },
     { href: `/${locale}/resources`, label: dict.common.nav.resources },
-    { href: `/${locale}/career`, label: dict.common.nav.career },
+    { href: `/${locale}/contact`, label: dict.common.nav.contact },
   ];
   const switchLocale = (newLocale: string) => {
     document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000`;
@@ -101,10 +101,10 @@ export function Navbar({ dict, locale }: { dict: any; locale: string }) {
             )}
           </div>
           <Link
-            href={`/${locale}/contact`}
+            href={`/${locale}/career`}
             className="inline-flex items-center justify-center rounded-md px-6 py-2.5 text-sm font-semibold bg-forest text-white hover:bg-forest-dark transition-colors"
           >
-            {dict.common.nav.contact}
+            {dict.common.nav.career}
           </Link>
         </div>
 
@@ -148,11 +148,11 @@ export function Navbar({ dict, locale }: { dict: any; locale: string }) {
                   </div>
                 </fieldset>
                 <Link
-                  href={`/${locale}/contact`}
+                  href={`/${locale}/career`}
                   onClick={() => setOpen(false)}
                   className="flex items-center justify-center rounded-lg px-4 py-4 text-base font-semibold bg-forest text-white hover:bg-forest-dark transition-colors min-h-[44px]"
                 >
-                  {dict.common.nav.contact}
+                  {dict.common.nav.career}
                 </Link>
               </div>
             </nav>
