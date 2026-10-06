@@ -27,8 +27,8 @@ export default async function CareerPage({ params }: { params: Promise<{ locale:
   return (
     <>
       {/* 1. CAREER HERO */}
-      <section className="relative pt-24 pb-20 md:pt-32 md:pb-32 bg-forest-deeper overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-20">
+      <section className="relative pt-24 pb-20 md:pt-32 md:pb-32 bg-gray-900 overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-40">
           <Image
             src="/hero-soil.jpg"
             alt="Agricultural field worker in Nepal"
@@ -40,7 +40,7 @@ export default async function CareerPage({ params }: { params: Promise<{ locale:
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="max-w-3xl">
             <AnimateIn>
-              <span className="text-forest-light font-semibold tracking-wider uppercase text-sm mb-4 block">
+              <span className="text-gray-300 font-semibold tracking-wider uppercase text-sm mb-4 block">
                 {dict.career.hero.label}
               </span>
               <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">

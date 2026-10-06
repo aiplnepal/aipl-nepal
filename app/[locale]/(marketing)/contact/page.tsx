@@ -37,8 +37,8 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   return (
     <>
       {/* 1. CONTACT HERO */}
-      <section className="relative pt-24 pb-20 md:pt-32 md:pb-32 bg-forest-deeper overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-20">
+      <section className="relative pt-24 pb-20 md:pt-32 md:pb-32 bg-gray-900 overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-40">
           <Image
             src="/hero-soil.jpg"
             alt="Agricultural landscape in Nepal"
@@ -49,7 +49,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <AnimateIn>
-            <p className="text-forest-light uppercase tracking-[0.2em] text-sm font-semibold mb-4">
+            <p className="text-gray-300 uppercase tracking-[0.2em] text-sm font-semibold mb-4">
               {dict.contact.hero.label}
             </p>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 max-w-3xl mx-auto">

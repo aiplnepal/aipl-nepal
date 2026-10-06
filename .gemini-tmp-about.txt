@@ -1,0 +1,513 @@
+--- AboutHero.tsx ---
+import { AnimateIn } from "@/components/sections/AnimateIn";
+import Image from "next/image";
+
+export function AboutHero({ dict }: { dict: any }) {
+  return (
+    <section className="bg-forest-deeper text-white relative overflow-hidden min-h-[60vh] flex flex-col justify-center">
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/hero-tech-farmer.jpg" // Reusing the authentic visual direction from homepage
+          alt="AIPL Agricultural Vision"
+          fill
+          className="object-cover opacity-30 mix-blend-overlay"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-forest-deeper/80 via-forest-deeper/50 to-forest-deeper/90" />
+      </div>
+      
+      <div className="max-w-5xl mx-auto px-6 relative z-10 text-center py-24 lg:py-32">
+        <AnimateIn>
+          <p className="text-forest-light uppercase tracking-[0.2em] text-xs md:text-sm font-semibold mb-6">
+            About AIPL
+          </p>
+        </AnimateIn>
+        
+        <AnimateIn delay={0.1}>
+          <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8 drop-shadow-sm">
+            Elevating the Nepali Farmer.
+          </h1>
+        </AnimateIn>
+        
+        <AnimateIn delay={0.2}>
+          <p className="text-white/90 text-lg md:text-xl lg:text-2xl leading-relaxed max-w-3xl mx-auto font-serif">
+            Agriculture Investment Private Limited (AIPL) is dedicated to solving the challenges of layman farmers by producing high-quality agricultural inputs and delivering technology-driven services.
+          </p>
+        </AnimateIn>
+      </div>
+    </section>
+  );
+}
+
+--- AgriTech.tsx ---
+import { AnimateIn } from "@/components/sections/AnimateIn";
+import Image from "next/image";
+
+export function AgriTech({ dict }: { dict: any }) {
+  return (
+    <section className="bg-gray-50 py-20 lg:py-32 border-b border-gray-100">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          
+          <div className="order-2 lg:order-1 relative">
+            <AnimateIn>
+              <div className="relative h-[400px] lg:h-[500px] w-full rounded-2xl overflow-hidden shadow-sm border border-gray-200">
+                <Image
+                  src="/sfms-technology.jpg" // Reusing SFMS image placeholder
+                  alt="Agriculture and Technology Integration"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </AnimateIn>
+          </div>
+
+          <div className="order-1 lg:order-2">
+            <AnimateIn>
+              <p className="text-forest uppercase tracking-widest text-xs font-semibold mb-4">
+                Agriculture + Technology
+              </p>
+              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight">
+                Data-Driven Decisions for the Layman Farmer.
+              </h2>
+            </AnimateIn>
+            <AnimateIn delay={0.1}>
+              <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
+                <p>
+                  To further enhance productivity and sustainability, AIPL is implementing the Smart Farming Management System (SFMS). This system represents the necessary intersection of traditional agriculture, soil health, data, and technology.
+                </p>
+                <p>
+                  By utilizing Internet of Things (IoT) technologies—such as weather forecasting, soil environment monitoring, and crop cycle management—we empower farmers to make precise, data-driven decisions. This optimizes resource utilization, reduces operational costs, and minimizes environmental impact.
+                </p>
+              </div>
+            </AnimateIn>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}
+
+--- ArsdInitiative.tsx ---
+import { AnimateIn } from "@/components/sections/AnimateIn";
+
+export function ArsdInitiative({ dict }: { dict: any }) {
+  return (
+    <section className="bg-forest text-white py-20 lg:py-32 relative overflow-hidden">
+      <div className="absolute inset-0 bg-forest-deeper/40 mix-blend-multiply" />
+      
+      <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
+        <AnimateIn>
+          <p className="text-white/80 uppercase tracking-widest text-xs font-semibold mb-6">
+            Our Nationwide Initiative
+          </p>
+        </AnimateIn>
+        
+        <AnimateIn delay={0.1}>
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight max-w-4xl mx-auto">
+            Agriculture Revitalizing Sustainable Development for Layman Farmers (ARSD)
+          </h2>
+        </AnimateIn>
+        
+        <AnimateIn delay={0.2}>
+          <p className="text-2xl md:text-3xl font-serif italic text-white/90 mb-12">
+            &quot;सामान्य किसानहरूका लागि दिगो कृषि प्रणाली&quot;
+          </p>
+        </AnimateIn>
+        
+        <AnimateIn delay={0.3}>
+          <div className="max-w-3xl mx-auto space-y-6 text-lg md:text-xl text-white/90 leading-relaxed">
+            <p>
+              The ARSD initiative is AIPL&apos;s flagship campaign. It represents our fundamental commitment to completely restructuring the agricultural support network in Nepal.
+            </p>
+            <p>
+              We are not just selling products; we are building an educational and infrastructural bridge that connects the most remote layman farmers with modern, sustainable farming technology.
+            </p>
+          </div>
+        </AnimateIn>
+      </div>
+    </section>
+  );
+}
+
+--- FarmerSupport.tsx ---
+import { AnimateIn } from "@/components/sections/AnimateIn";
+import { BookOpen, Sprout, ShieldCheck, TrendingUp, HandCoins } from "lucide-react";
+
+const supportPillars = [
+  {
+    icon: BookOpen,
+    title: "Education & Training",
+    description: "Continuous education programs and field-based technical support for bio-fertilizer usage and organic crop production.",
+  },
+  {
+    icon: Sprout,
+    title: "Agricultural Inputs",
+    description: "Supplying both indigenous and hybrid seeds alongside modern agricultural tools and essential daily goods.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Soil & Health Testing",
+    description: "Scientific soil testing to diagnose issues and prescribe accurate biological treatments for phytopathology.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Processing Techniques",
+    description: "Training farmers in the processing of flowers, fruits, and herbs harvested from surrounding forests.",
+  },
+  {
+    icon: HandCoins,
+    title: "Market Access",
+    description: "Managing the marketing of agricultural products, ensuring competitive value and fair retail pricing in national and international markets.",
+  },
+];
+
+export function FarmerSupport({ dict }: { dict: any }) {
+  return (
+    <section className="bg-white py-20 lg:py-32 border-b border-gray-100">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-24">
+          <AnimateIn>
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              Empowering the Farmer Ecosystem
+            </h2>
+          </AnimateIn>
+          <AnimateIn delay={0.1}>
+            <p className="text-gray-600 text-lg leading-relaxed">
+              We provide comprehensive support at every stage of the agricultural lifecycle. By focusing on education, fair market access, and scientific input, we help farmers transition into successful micro-entrepreneurs.
+            </p>
+          </AnimateIn>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {supportPillars.map((pillar, i) => (
+            <AnimateIn key={pillar.title} delay={0.1 + (i * 0.1)}>
+              <div className="flex flex-col items-center text-center p-8 bg-gray-50 rounded-2xl border border-gray-100 h-full hover:shadow-md transition-shadow">
+                <div className="w-16 h-16 rounded-full bg-forest/10 flex items-center justify-center mb-6">
+                  <pillar.icon className="h-8 w-8 text-forest" strokeWidth={1.5} />
+                </div>
+                <h3 className="font-heading text-xl font-bold text-gray-900 mb-4">{pillar.title}</h3>
+                <p className="text-gray-600 leading-relaxed flex-grow">{pillar.description}</p>
+              </div>
+            </AnimateIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+--- GeographicalReach.tsx ---
+import { AnimateIn } from "@/components/sections/AnimateIn";
+import Image from "next/image";
+
+export function GeographicalReach({ dict }: { dict: any }) {
+  // TODO: [CLIENT VERIFICATION REQUIRED]
+  // Reach statistics pending final client confirmation
+  const isVerified = false;
+
+  return (
+    <section className="bg-forest text-white py-20 lg:py-32 relative overflow-hidden">
+      <div className="absolute inset-0 bg-forest-deeper/50 mix-blend-multiply" />
+      
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          
+          <div>
+            <AnimateIn>
+              <p className="text-white/80 uppercase tracking-widest text-xs font-semibold mb-4">
+                National Network
+              </p>
+              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                Reaching Every Corner of Nepal.
+              </h2>
+            </AnimateIn>
+            <AnimateIn delay={0.1}>
+              <div className="w-12 h-1 bg-white mb-8"></div>
+            </AnimateIn>
+            <AnimateIn delay={0.2}>
+              <p className="text-white/90 text-lg leading-relaxed mb-8">
+                Through our comprehensive dealer network and the ARSD initiative, we are working to ensure that high-quality agricultural inputs and education are accessible to farmers nationwide, from the Terai to the high Himalayas.
+              </p>
+            </AnimateIn>
+
+            {isVerified && (
+              <AnimateIn delay={0.3} className="grid grid-cols-3 gap-6 pt-8 border-t border-white/20 mt-8">
+                <div>
+                  <p className="font-heading text-4xl font-bold mb-2 text-white">7</p>
+                  <p className="text-sm text-white/80 font-medium uppercase tracking-wider">Provinces</p>
+                </div>
+                <div>
+                  <p className="font-heading text-4xl font-bold mb-2 text-white">77</p>
+                  <p className="text-sm text-white/80 font-medium uppercase tracking-wider">Districts</p>
+                </div>
+                <div>
+                  <p className="font-heading text-4xl font-bold mb-2 text-white">6,743</p>
+                  <p className="text-sm text-white/80 font-medium uppercase tracking-wider">Wards</p>
+                </div>
+              </AnimateIn>
+            )}
+            {!isVerified && (
+              <AnimateIn delay={0.3}>
+                <p className="text-white/60 text-sm italic">
+                  * Establishing our nationwide grassroots presence through the ARSD campaign.
+                </p>
+              </AnimateIn>
+            )}
+          </div>
+
+          <div className="relative h-[300px] lg:h-[450px] w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+            <AnimateIn className="w-full h-full" delay={0.4}>
+              <Image
+                src="/nepal-landscape.jpg" // Reusing authentic landscape placeholder
+                alt="Agricultural expansion across Nepal"
+                fill
+                className="object-cover"
+              />
+            </AnimateIn>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}
+
+--- HistoryTimeline.tsx ---
+import { AnimateIn } from "@/components/sections/AnimateIn";
+import { Building2, FileText, CheckCircle } from "lucide-react";
+
+export function HistoryTimeline({ dict }: { dict: any }) {
+  // TODO: [CLIENT VERIFICATION REQUIRED]
+  // Registration and timeline details need final client confirmation
+  
+  return (
+    <section className="bg-white py-20 lg:py-32 border-b border-gray-100">
+      <div className="max-w-4xl mx-auto px-6">
+        <AnimateIn>
+          <div className="text-center mb-16">
+            <p className="text-forest uppercase tracking-widest text-xs font-semibold mb-4">
+              Our Foundations
+            </p>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-gray-900">
+              Institutional History
+            </h2>
+          </div>
+        </AnimateIn>
+
+        <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-200 before:to-transparent">
+          
+          {/* Timeline Item 1 */}
+          <AnimateIn delay={0.1}>
+            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-forest text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                <Building2 className="w-4 h-4" />
+              </div>
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-gray-50 border border-gray-100 shadow-sm">
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="font-bold text-gray-900 text-lg">Foundation</h3>
+                  <span className="text-forest font-semibold text-sm">2020</span>
+                </div>
+                <p className="text-gray-600">
+                  Established on July 14, 2020 (30th Ashad 2077) to bridge the gap between traditional farming and modern agricultural tech.
+                </p>
+              </div>
+            </div>
+          </AnimateIn>
+
+          {/* Timeline Item 2 */}
+          <AnimateIn delay={0.2}>
+            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-gray-200 text-gray-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                <FileText className="w-4 h-4" />
+              </div>
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-gray-50 border border-gray-100 shadow-sm">
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="font-bold text-gray-900 text-lg">Registration</h3>
+                  <span className="text-gray-500 font-semibold text-sm">Pending</span>
+                </div>
+                <p className="text-gray-600 text-sm mb-2">
+                  Company Registration No. 241861/077/078
+                </p>
+                <p className="text-gray-600 text-sm">
+                  Industry Registration No. 2503/36/063/063
+                </p>
+              </div>
+            </div>
+          </AnimateIn>
+
+          {/* Timeline Item 3 */}
+          <AnimateIn delay={0.3}>
+            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-gray-200 text-gray-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                <CheckCircle className="w-4 h-4" />
+              </div>
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-gray-50 border border-gray-100 shadow-sm">
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="font-bold text-gray-900 text-lg">Operations</h3>
+                  <span className="text-gray-500 font-semibold text-sm">Active</span>
+                </div>
+                <p className="text-gray-600">
+                  Operating from Lalitpur Ward No. 22 and Kathmandu Metropolitan City Ward No. 03, driving nationwide expansion.
+                </p>
+              </div>
+            </div>
+          </AnimateIn>
+
+        </div>
+      </div>
+    </section>
+  );
+}
+
+--- InstitutionStory.tsx ---
+import { AnimateIn } from "@/components/sections/AnimateIn";
+import Image from "next/image";
+
+export function InstitutionStory({ dict }: { dict: any }) {
+  return (
+    <section className="bg-white py-20 lg:py-32 border-b border-gray-100">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+          
+          <div className="lg:col-span-5 relative">
+            <div className="sticky top-32">
+              <AnimateIn>
+                <div className="relative h-[400px] md:h-[600px] w-full rounded-2xl overflow-hidden shadow-sm">
+                  <Image
+                    src="/hero-tractor.jpg" // Reusing institutional visual
+                    alt="AIPL Institution"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </AnimateIn>
+            </div>
+          </div>
+
+          <div className="lg:col-span-7 flex flex-col justify-center">
+            <div className="mb-16">
+              <AnimateIn>
+                <p className="text-forest uppercase tracking-widest text-xs font-semibold mb-4">
+                  The Institution
+                </p>
+                <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight">
+                  Revitalizing the agricultural sector through inclusive participation.
+                </h2>
+              </AnimateIn>
+              <AnimateIn delay={0.1}>
+                <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
+                  <p>
+                    AIPL is fundamentally dedicated to transforming the agricultural sector. By fostering inclusive participation, integrating modern technologies, and promoting environmentally sustainable practices, we are addressing the systemic challenges faced by Nepali farmers.
+                  </p>
+                  <p>
+                    We prioritize the production of bio-fertilizers from indigenous resources and manufacture advanced liquid fertilizers in our microbial laboratories. Our approach treats soil health, natural resources, and indigenous knowledge not just as agricultural inputs, but as valuable assets to be transformed into sustainable economic opportunities.
+                  </p>
+                </div>
+              </AnimateIn>
+            </div>
+
+            <div>
+              <AnimateIn delay={0.2}>
+                <p className="text-forest uppercase tracking-widest text-xs font-semibold mb-4">
+                  Why We Exist
+                </p>
+                <h3 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                  Agriculture is fundamental to human civilization.
+                </h3>
+              </AnimateIn>
+              <AnimateIn delay={0.3}>
+                <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
+                  <p>
+                    The economic empowerment of marginalized and economically disadvantaged populations through active participation in agricultural systems remains fundamental to sustainable development. 
+                  </p>
+                  <p>
+                    For too long, farmers have been undervalued in Nepali society. AIPL exists to transform this perception by positioning layman farmers as central, respected contributors to national development and ensuring their economic stability.
+                  </p>
+                </div>
+              </AnimateIn>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}
+
+--- Leadership.tsx ---
+import { AnimateIn } from "@/components/sections/AnimateIn";
+import { Users } from "lucide-react";
+
+export function Leadership({ dict }: { dict: any }) {
+  // TODO: [CLIENT VERIFICATION REQUIRED]
+  // Leadership data is pending. Displaying placeholder state rather than fake profiles.
+  
+  return (
+    <section className="py-20 lg:py-32 bg-white">
+      <div className="max-w-7xl mx-auto px-6 text-center">
+        <AnimateIn>
+          <div className="w-16 h-16 rounded-full bg-forest/10 flex items-center justify-center mx-auto mb-6 text-forest">
+            <Users className="w-8 h-8" />
+          </div>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            Institutional Leadership
+          </h2>
+          <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            The team driving AIPL&apos;s mission to revitalize Nepali agriculture. Leadership profiles and institutional board information will be published shortly.
+          </p>
+        </AnimateIn>
+      </div>
+    </section>
+  );
+}
+
+--- MissionVision.tsx ---
+import { AnimateIn } from "@/components/sections/AnimateIn";
+
+export function MissionVision({ dict }: { dict: any }) {
+  return (
+    <section className="bg-forest/5 py-20 lg:py-32 border-b border-forest/10">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+          
+          <AnimateIn delay={0.1}>
+            <div className="border-l-2 border-forest pl-6 h-full flex flex-col">
+              <h3 className="font-heading text-2xl font-bold text-gray-900 mb-4 uppercase tracking-wide">
+                Mission
+              </h3>
+              <p className="text-gray-700 text-lg leading-relaxed flex-grow">
+                Transforming the conventional approach of Nepalese farmers by introducing modern, sustainable, and technologically integrated agricultural practices, significantly enhancing both yield and the farmer&apos;s social standing.
+              </p>
+            </div>
+          </AnimateIn>
+
+          <AnimateIn delay={0.2}>
+            <div className="border-l-2 border-forest pl-6 h-full flex flex-col">
+              <h3 className="font-heading text-2xl font-bold text-gray-900 mb-4 uppercase tracking-wide">
+                Vision
+              </h3>
+              <p className="text-gray-700 text-lg leading-relaxed flex-grow">
+                To revolutionize Nepal&apos;s agricultural landscape by bridging traditional indigenous knowledge with cutting-edge agrarian technology, creating a sustainable future for local communities.
+              </p>
+            </div>
+          </AnimateIn>
+
+          <AnimateIn delay={0.3}>
+            <div className="border-l-2 border-forest pl-6 h-full flex flex-col">
+              <h3 className="font-heading text-2xl font-bold text-gray-900 mb-4 uppercase tracking-wide">
+                Purpose
+              </h3>
+              <p className="text-gray-700 text-lg leading-relaxed flex-grow">
+                To ensure that the layman farmer is empowered, educated, and equipped to achieve economic stability and become a respected contributor to national development.
+              </p>
+            </div>
+          </AnimateIn>
+
+        </div>
+      </div>
+    </section>
+  );
+}
+

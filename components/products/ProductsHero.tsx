@@ -3,21 +3,21 @@ import Image from "next/image";
 
 export function ProductsHero({ dict }: { dict?: any }) {
   return (
-    <section className="bg-forest-deeper text-white relative overflow-hidden min-h-[50vh] flex flex-col justify-center">
+    <section className="bg-gray-900 text-white relative overflow-hidden min-h-[50vh] flex flex-col justify-center">
       <div className="absolute inset-0 z-0">
         <Image
           src="/hero-tech-farmer.jpg" // Reusing the authentic visual direction
           alt="AIPL Agricultural Products"
           fill
-          className="object-cover opacity-30 mix-blend-overlay"
+          className="object-cover opacity-40"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-forest-deeper/80 via-forest-deeper/50 to-forest-deeper/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-900/80 via-gray-900/50 to-gray-900/90" />
       </div>
       
       <div className="max-w-4xl mx-auto px-6 relative z-10 text-center py-24 lg:py-32">
         <AnimateIn>
-          <p className="text-forest-light uppercase tracking-[0.2em] text-xs md:text-sm font-semibold mb-6">
+          <p className="text-gray-300 uppercase tracking-[0.2em] text-xs md:text-sm font-semibold mb-6">
             {dict.products.hero.label}
           </p>
         </AnimateIn>
