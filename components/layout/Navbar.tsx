@@ -60,14 +60,14 @@ export function Navbar({ dict, locale }: { dict: any; locale: string }) {
         {/* Center: Navigation Links */}
         <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => {
-            const isActive = pathname === link.href;
+            const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`);
             return (
               <Link
                 key={link.href}
                 href={link.href}
                 aria-current={isActive ? "page" : undefined}
-                className={`text-[15px] font-medium transition-colors hover:text-white/80 ${
-                  isActive ? "text-white font-bold" : "text-white/90"
+                className={`text-[15px] px-4 py-2 rounded-md font-medium transition-colors ${
+                  isActive ? "bg-white/20 text-white font-bold" : "text-white/90 hover:bg-white/10 hover:text-white"
                 }`}
               >
                 {link.label}
@@ -120,7 +120,7 @@ export function Navbar({ dict, locale }: { dict: any; locale: string }) {
             <SheetTitle className="sr-only">{locale === 'ne' ? 'नेभिगेसन मेनु' : 'Navigation Menu'}</SheetTitle>
             <nav aria-label={locale === 'ne' ? 'मोबाइल नेभिगेसन' : 'Mobile navigation'} className="flex flex-col gap-2">
               {navLinks.map((link) => {
-                const isActive = pathname === link.href;
+                const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`);
                 return (
                   <Link
                     key={link.href}
