@@ -4,11 +4,16 @@ export interface Product {
   name: string;
   tagline: string;
   description: string;
+  overview?: string;
+  components?: string[];
+  agriculturalPurpose?: string[];
+  benefits?: string[];
   useCases: string[];
   icon: string;
   colorAccent?: string;
   images: string[];
   createdAt: string;
+  safetyInfo?: string;
 }
 
 export interface Dealer {

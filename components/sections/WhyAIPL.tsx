@@ -22,7 +22,7 @@ const reasons = [
   },
 ];
 
-export function WhyAIPL() {
+export function WhyAIPL({ dict }: { dict: any }) {
   return (
     <section className="bg-forest/5 py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-6">

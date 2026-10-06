@@ -17,6 +17,7 @@ import {
 } from "@/lib/nepal-locations";
 
 interface LocationSelectorProps {
+  dict?: any;
   onProvinceChange: (val: string) => void;
   onDistrictChange: (val: string) => void;
   onMunicipalityChange: (val: string) => void;
@@ -30,6 +31,7 @@ interface LocationSelectorProps {
 }
 
 export function LocationSelector({
+  dict,
   onProvinceChange,
   onDistrictChange,
   onMunicipalityChange,
@@ -39,6 +41,7 @@ export function LocationSelector({
   const [provinceId, setProvinceId] = useState<number | null>(null);
   const [districtId, setDistrictId] = useState<number | null>(null);
   const [municipalityId, setMunicipalityId] = useState<number | null>(null);
+  const [wardId, setWardId] = useState<string>("");
 
   const [districtKey, setDistrictKey] = useState(0);
   const [municipalityKey, setMunicipalityKey] = useState(0);
@@ -68,6 +71,7 @@ export function LocationSelector({
       setProvinceId(Number(v));
       setDistrictId(null);
       setMunicipalityId(null);
+      setWardId("");
       setDistrictKey((k) => k + 1);
       setMunicipalityKey((k) => k + 1);
       setWardKey((k) => k + 1);
@@ -85,6 +89,7 @@ export function LocationSelector({
       const dist = districts.find((d) => d.id === Number(v));
       setDistrictId(Number(v));
       setMunicipalityId(null);
+      setWardId("");
       setMunicipalityKey((k) => k + 1);
       setWardKey((k) => k + 1);
       onDistrictChange(dist?.name ?? v);
@@ -99,6 +104,7 @@ export function LocationSelector({
       const v = String(val);
       const mun = municipalities.find((m) => m.id === Number(v));
       setMunicipalityId(Number(v));
+      setWardId("");
       setWardKey((k) => k + 1);
       onMunicipalityChange(mun?.name ?? v);
       onWardChange("");
@@ -108,6 +114,7 @@ export function LocationSelector({
 
   const handleWardChange = useCallback(
     (val: unknown) => {
+      setWardId(String(val));
       onWardChange(String(val));
     },
     [onWardChange],
@@ -116,10 +123,10 @@ export function LocationSelector({
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
       <div>
-        <Label className="text-sm font-medium text-gray-900 mb-1.5 block">Province</Label>
-        <Select onValueChange={handleProvinceChange}>
-          <SelectTrigger className="focus:ring-forest">
-            <SelectValue placeholder="Select province" />
+        <Label className="text-sm font-medium text-gray-900 mb-1.5 block">{dict?.common?.locationSelector?.province || "Province"}</Label>
+        <Select value={provinceId ? String(provinceId) : undefined} onValueChange={handleProvinceChange}>
+          <SelectTrigger className="focus:ring-forest" aria-invalid={!!errors?.province} aria-describedby={errors?.province ? "province-error" : undefined}>
+            <SelectValue className="truncate" placeholder={dict?.common?.locationSelector?.selectProvince || "Select province"} />
           </SelectTrigger>
           <SelectContent>
             {allProvinces.map((p) => (
@@ -130,19 +137,19 @@ export function LocationSelector({
           </SelectContent>
         </Select>
         {errors?.province && (
-          <p className="text-sm text-red-500 mt-1">{errors.province.message}</p>
+          <p id="province-error" className="text-sm text-red-500 mt-1">{errors.province.message}</p>
         )}
       </div>
 
       <div>
-        <Label className="text-sm font-medium text-gray-900 mb-1.5 block">District</Label>
+        <Label className="text-sm font-medium text-gray-900 mb-1.5 block">{dict?.common?.locationSelector?.district || "District"}</Label>
         <Select
-          key={`district-${districtKey}`}
+          value={districtId ? String(districtId) : undefined}
           disabled={!provinceId}
           onValueChange={handleDistrictChange}
         >
-          <SelectTrigger className="focus:ring-forest">
-            <SelectValue placeholder={provinceId ? "Select district" : "Select province first"} />
+          <SelectTrigger className="focus:ring-forest" aria-invalid={!!errors?.district} aria-describedby={errors?.district ? "district-error" : undefined}>
+            <SelectValue className="truncate" placeholder={provinceId ? (dict?.common?.locationSelector?.selectDistrict || "Select district") : (dict?.common?.locationSelector?.selectProvinceFirst || "Select province first")} />
           </SelectTrigger>
           <SelectContent>
             {districts.map((d) => (
@@ -153,19 +160,19 @@ export function LocationSelector({
           </SelectContent>
         </Select>
         {errors?.district && (
-          <p className="text-sm text-red-500 mt-1">{errors.district.message}</p>
+          <p id="district-error" className="text-sm text-red-500 mt-1">{errors.district.message}</p>
         )}
       </div>
 
       <div>
-        <Label className="text-sm font-medium text-gray-900 mb-1.5 block">Local Level</Label>
+        <Label className="text-sm font-medium text-gray-900 mb-1.5 block">{dict?.common?.locationSelector?.localLevel || "Local Level"}</Label>
         <Select
-          key={`municipality-${municipalityKey}`}
+          value={municipalityId ? String(municipalityId) : undefined}
           disabled={!districtId}
           onValueChange={handleMunicipalityChange}
         >
-          <SelectTrigger className="focus:ring-forest">
-            <SelectValue placeholder={districtId ? "Select local level" : "Select district first"} />
+          <SelectTrigger className="focus:ring-forest" aria-invalid={!!errors?.municipality} aria-describedby={errors?.municipality ? "municipality-error" : undefined}>
+            <SelectValue className="truncate" placeholder={districtId ? (dict?.common?.locationSelector?.selectLocalLevel || "Select local level") : (dict?.common?.locationSelector?.selectDistrictFirst || "Select district first")} />
           </SelectTrigger>
           <SelectContent>
             {municipalities.map((m) => (
@@ -176,30 +183,30 @@ export function LocationSelector({
           </SelectContent>
         </Select>
         {errors?.municipality && (
-          <p className="text-sm text-red-500 mt-1">{errors.municipality.message}</p>
+          <p id="municipality-error" className="text-sm text-red-500 mt-1">{errors.municipality.message}</p>
         )}
       </div>
 
       <div>
-        <Label className="text-sm font-medium text-gray-900 mb-1.5 block">Ward</Label>
+        <Label className="text-sm font-medium text-gray-900 mb-1.5 block">{dict?.common?.locationSelector?.ward || "Ward"}</Label>
         <Select
-          key={`ward-${wardKey}`}
+          value={wardId ? String(wardId) : undefined} 
           disabled={!municipalityId}
           onValueChange={handleWardChange}
         >
-          <SelectTrigger className="focus:ring-forest">
-            <SelectValue placeholder={municipalityId ? "Select ward" : "Select local level first"} />
+          <SelectTrigger className="focus:ring-forest" aria-invalid={!!errors?.ward} aria-describedby={errors?.ward ? "ward-error" : undefined}>
+            <SelectValue className="truncate" placeholder={municipalityId ? (dict?.common?.locationSelector?.selectWard || "Select ward") : (dict?.common?.locationSelector?.selectLocalLevelFirst || "Select local level first")} />
           </SelectTrigger>
           <SelectContent>
             {wards.map((w) => (
               <SelectItem key={w} value={String(w)}>
-                Ward {w}
+                {dict?.common?.locationSelector?.wardPrefix || "Ward "}{w}
               </SelectItem>
             ))}
           </SelectContent>
         </Select>
         {errors?.ward && (
-          <p className="text-sm text-red-500 mt-1">{errors.ward.message}</p>
+          <p id="ward-error" className="text-sm text-red-500 mt-1">{errors.ward.message}</p>
         )}
       </div>
     </div>

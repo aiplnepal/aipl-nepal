@@ -26,7 +26,7 @@ export async function POST(request: Request) {
     //   text: `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\nType: ${data.inquiryType}\nLocation: ${data.province}, ${data.district}, ${data.municipality}, Ward ${data.ward}\n\nMessage:\n${data.message}`,
     // });
 
-    console.log("Contact form submission:", data);
+    // Removed PII logging for security
 
     return NextResponse.json({ success: true });
   } catch {

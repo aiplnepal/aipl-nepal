@@ -3,11 +3,17 @@ import type { Product } from "@/lib/types";
 export const bioPesticide: Product = {
   id: "prod-002",
   slug: "bio-pesticide",
-  name: "Bio Pesticide",
-  tagline: "Natural protection against crop pests",
+  name: "Biopesticides",
+  tagline: "Natural protection derived from organic sources",
   description:
-    "A bio-based pest control solution that protects crops from common pests without harsh chemical residue. Safe for continued use through the growing cycle and gentler on beneficial insects and soil life. Designed for Nepal's most prevalent pest challenges, our bio pesticide offers effective protection while preserving the natural balance of your farm's ecosystem.",
+    "A bio-based pest control solution derived from natural sources that protects crops from common pests without harsh chemical residue. Designed for Nepal's most prevalent pest challenges, it offers effective protection. (Note: Claims regarding safety for beneficial insects are pending client verification.)",
+  agriculturalPurpose: ["Pest management", "Reduced reliance on chemical pesticides"],
+  benefits: [
+    "Environmentally friendly pest control",
+    "Reduces the use of chemical pesticides"
+  ],
   useCases: ["Pest management", "Organic farming", "Integrated crop protection"],
+  safetyInfo: "Claims regarding complete safety for beneficial insects are pending client verification.",
   icon: "shield",
   colorAccent: "forest",
   images: [],

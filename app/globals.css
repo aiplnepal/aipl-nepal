@@ -76,10 +76,10 @@
   --input: #e5e7eb;
   --ring: #39b54a;
   --chart-1: #39b54a;
-  --chart-2: #2d9a3d;
-  --chart-3: #1e7a2e;
+  --chart-2: #39b54a;
+  --chart-3: #39b54a;
   --chart-4: #f0fdf4;
-  --chart-5: #166534;
+  --chart-5: #39b54a;
   --radius: 0.75rem;
   --sidebar: #39b54a;
   --sidebar-foreground: #FFFFFF;
@@ -105,3 +105,69 @@
     font-family: var(--font-source-serif), Cambria, "Times New Roman", serif;
   }
 }
+
+/* === Skip-to-Content Link === */
+.skip-to-content {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 9999;
+}
+.skip-to-content:focus {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: auto;
+  padding: 0.75rem 1.5rem;
+  background-color: #39b54a;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* === Consistent Focus Visible Ring === */
+:focus-visible {
+  outline: 2px solid #39b54a;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* === Reduced Motion === */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* === Nepali / Devanagari Typography === */
+html[lang="ne"] body {
+  line-height: 1.8;
+}
+html[lang="ne"] h1,
+html[lang="ne"] h2,
+html[lang="ne"] h3,
+html[lang="ne"] h4,
+html[lang="ne"] h5,
+html[lang="ne"] h6 {
+  line-height: 1.4;
+}
+html[lang="ne"] button,
+html[lang="ne"] a {
+  line-height: 1.6;
+}
+
+

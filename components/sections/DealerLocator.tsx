@@ -23,7 +23,7 @@ interface DealerLocatorProps {
   dealers: Dealer[];
 }
 
-export function DealerLocator({ dealers }: DealerLocatorProps) {
+export function DealerLocator({ dealers, dict }: DealerLocatorProps & { dict?: any }) {
   const [selectedProvince, setSelectedProvince] = useState("");
   const [selectedDistrict, setSelectedDistrict] = useState("");
   const [selectedMunicipality, setSelectedMunicipality] = useState("");
@@ -32,10 +32,7 @@ export function DealerLocator({ dealers }: DealerLocatorProps) {
   const [provinceId, setProvinceId] = useState<number | null>(null);
   const [districtId, setDistrictId] = useState<number | null>(null);
   const [municipalityId, setMunicipalityId] = useState<number | null>(null);
-
-  const [districtKey, setDistrictKey] = useState(0);
-  const [municipalityKey, setMunicipalityKey] = useState(0);
-  const [wardKey, setWardKey] = useState(0);
+  const [wardId, setWardId] = useState<string>("");
 
   const allProvinces = getProvinces();
 
@@ -65,7 +62,7 @@ export function DealerLocator({ dealers }: DealerLocatorProps) {
   }, [dealers, selectedProvince, selectedDistrict, selectedMunicipality, selectedWard]);
 
   const hasFilters = selectedProvince || selectedDistrict || selectedMunicipality || selectedWard;
-  const isFullySelected = selectedProvince && selectedDistrict && selectedMunicipality && selectedWard;
+  const isFullySelected = selectedProvince || selectedDistrict || selectedMunicipality;
 
   const handleProvinceChange = useCallback(
     (val: unknown) => {
@@ -78,9 +75,7 @@ export function DealerLocator({ dealers }: DealerLocatorProps) {
       setSelectedDistrict("");
       setSelectedMunicipality("");
       setSelectedWard("");
-      setDistrictKey((k) => k + 1);
-      setMunicipalityKey((k) => k + 1);
-      setWardKey((k) => k + 1);
+      setWardId("");
     },
     [allProvinces],
   );
@@ -94,8 +89,7 @@ export function DealerLocator({ dealers }: DealerLocatorProps) {
       setSelectedDistrict(dist?.name ?? "");
       setSelectedMunicipality("");
       setSelectedWard("");
-      setMunicipalityKey((k) => k + 1);
-      setWardKey((k) => k + 1);
+      setWardId("");
     },
     [districts],
   );
@@ -107,12 +101,13 @@ export function DealerLocator({ dealers }: DealerLocatorProps) {
       setMunicipalityId(Number(v));
       setSelectedMunicipality(mun?.name ?? "");
       setSelectedWard("");
-      setWardKey((k) => k + 1);
+      setWardId("");
     },
     [municipalities],
   );
 
   const handleWardChange = useCallback((val: unknown) => {
+    setWardId(String(val));
     setSelectedWard(String(val));
   }, []);
 
@@ -124,9 +119,7 @@ export function DealerLocator({ dealers }: DealerLocatorProps) {
     setSelectedDistrict("");
     setSelectedMunicipality("");
     setSelectedWard("");
-    setDistrictKey((k) => k + 1);
-    setMunicipalityKey((k) => k + 1);
-    setWardKey((k) => k + 1);
+    setWardId("");
   }, []);
 
   return (
@@ -151,15 +144,15 @@ export function DealerLocator({ dealers }: DealerLocatorProps) {
             <div className="flex items-center gap-2 mb-6">
               <Search className="h-5 w-5 text-forest" />
               <h3 className="font-heading text-lg font-bold text-gray-900">
-                Search by Location
+                {dict.contact.locator.searchTitle}
               </h3>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               <div>
-                <Label className="text-sm font-medium text-gray-900 mb-1.5 block">Province</Label>
-                <Select onValueChange={handleProvinceChange}>
+                <Label className="text-sm font-medium text-gray-900 mb-1.5 block">{dict.contact.locator.labels.province}</Label>
+                <Select value={provinceId ? String(provinceId) : undefined} onValueChange={handleProvinceChange}>
                   <SelectTrigger className="focus:ring-forest">
-                    <SelectValue placeholder="Select province" />
+                    <SelectValue className="truncate" placeholder={dict.contact.locator.placeholders.selectProvince} />
                   </SelectTrigger>
                   <SelectContent>
                     {allProvinces.map((p) => (
@@ -172,14 +165,14 @@ export function DealerLocator({ dealers }: DealerLocatorProps) {
               </div>
 
               <div>
-                <Label className="text-sm font-medium text-gray-900 mb-1.5 block">District</Label>
+                <Label className="text-sm font-medium text-gray-900 mb-1.5 block">{dict.contact.locator.labels.district}</Label>
                 <Select
-                  key={`d-dealer-${districtKey}`}
+                  value={districtId ? String(districtId) : undefined}
                   disabled={!provinceId}
                   onValueChange={handleDistrictChange}
                 >
                   <SelectTrigger className="focus:ring-forest">
-                    <SelectValue placeholder={provinceId ? "Select district" : "Select province first"} />
+                    <SelectValue className="truncate" placeholder={provinceId ? dict.contact.locator.placeholders.selectDistrict : dict.contact.locator.placeholders.selectDistrictFirst} />
                   </SelectTrigger>
                   <SelectContent>
                     {districts.map((d) => (
@@ -192,14 +185,14 @@ export function DealerLocator({ dealers }: DealerLocatorProps) {
               </div>
 
               <div>
-                <Label className="text-sm font-medium text-gray-900 mb-1.5 block">Local Level</Label>
+                <Label className="text-sm font-medium text-gray-900 mb-1.5 block">{dict.contact.locator.labels.localLevel}</Label>
                 <Select
-                  key={`m-dealer-${municipalityKey}`}
+                  value={municipalityId ? String(municipalityId) : undefined}
                   disabled={!districtId}
                   onValueChange={handleMunicipalityChange}
                 >
                   <SelectTrigger className="focus:ring-forest">
-                    <SelectValue placeholder={districtId ? "Select local level" : "Select district first"} />
+                    <SelectValue className="truncate" placeholder={districtId ? dict.contact.locator.placeholders.selectLocalLevel : dict.contact.locator.placeholders.selectLocalLevelFirst} />
                   </SelectTrigger>
                   <SelectContent>
                     {municipalities.map((m) => (
@@ -212,20 +205,18 @@ export function DealerLocator({ dealers }: DealerLocatorProps) {
               </div>
 
               <div>
-                <Label className="text-sm font-medium text-gray-900 mb-1.5 block">Ward</Label>
+                <Label className="text-sm font-medium text-gray-900 mb-1.5 block">{dict.contact.locator.labels.ward}</Label>
                 <Select
-                  key={`w-dealer-${wardKey}`}
+                  value={wardId ? String(wardId) : undefined}
                   disabled={!municipalityId}
                   onValueChange={handleWardChange}
                 >
                   <SelectTrigger className="focus:ring-forest">
-                    <SelectValue placeholder={municipalityId ? "Select ward" : "Select local level first"} />
+                    <SelectValue className="truncate" placeholder={municipalityId ? dict.contact.locator.placeholders.selectWard : dict.contact.locator.placeholders.selectWardFirst} />
                   </SelectTrigger>
                   <SelectContent>
                     {wards.map((w) => (
-                      <SelectItem key={w} value={String(w)}>
-                        Ward {w}
-                      </SelectItem>
+                      <SelectItem key={w} value={String(w)}>{dict.contact.locator.wardPrefix} {w}</SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
@@ -237,7 +228,7 @@ export function DealerLocator({ dealers }: DealerLocatorProps) {
                 onClick={clearFilters}
                 className="mt-4 text-sm text-forest hover:text-forest-dark font-medium transition-colors"
               >
-                Clear all filters
+                {dict.contact.locator.clearFilters}
               </button>
             )}
           </div>
@@ -250,10 +241,10 @@ export function DealerLocator({ dealers }: DealerLocatorProps) {
               <MapPin className="h-7 w-7 text-forest/60" />
             </div>
             <h3 className="font-heading text-xl font-bold text-gray-900 mb-2">
-              Find Your Local Dealer
+              {dict.contact.locator.updateTitle}
             </h3>
             <p className="text-gray-500 max-w-md mx-auto">
-              Please complete all selections above (Province, District, Local Level, and Ward) to reveal the authorized AIPL dealer in your specific area.
+              {dict.contact.locator.updateDesc}
             </p>
           </div>
         ) : filteredDealers.length > 0 ? (
@@ -278,7 +269,7 @@ export function DealerLocator({ dealers }: DealerLocatorProps) {
                     <div className="flex items-start gap-2.5">
                       <MapPin className="h-4 w-4 text-gray-500 shrink-0 mt-0.5" />
                       <span>
-                        Ward {dealer.ward}, {dealer.municipality}, {dealer.district}
+                        {dict.contact.locator.wardPrefix} {dealer.ward}, {dealer.municipality}, {dealer.district}
                       </span>
                     </div>
                     <div className="flex items-center gap-2.5">
@@ -302,18 +293,17 @@ export function DealerLocator({ dealers }: DealerLocatorProps) {
               <MapPin className="h-7 w-7 text-gray-500" />
             </div>
             <h3 className="font-heading text-xl font-bold text-gray-900 mb-2">
-              No Dealers Found
+              {dict.contact.locator.noDealersTitle}
             </h3>
             <p className="text-gray-500 max-w-md mx-auto">
-              We don&apos;t have a dealer in this exact location yet. Try broadening
-              your search or contact us directly for assistance.
+              {dict.contact.locator.noDealersDesc}
             </p>
             {hasFilters && (
               <button
                 onClick={clearFilters}
                 className="mt-4 text-sm text-forest hover:text-forest-dark font-medium transition-colors"
               >
-                Clear filters to search again
+                {dict.contact.locator.clearToSearch}
               </button>
             )}
           </div>
