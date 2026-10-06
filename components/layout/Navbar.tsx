@@ -50,11 +50,11 @@ export function Navbar({ dict, locale }: { dict: any; locale: string }) {
   const currentLangLabel = dict.common.languageOptions[locale as keyof typeof dict.common.languageOptions];
 
   return (
-    <header className="bg-white text-gray-900 sticky top-0 z-50 border-b border-gray-100 shadow-sm h-[90px]">
+    <header className="bg-forest text-white sticky top-0 z-50 shadow-sm h-[90px]">
       <nav aria-label={locale === 'ne' ? 'मुख्य नेभिगेसन' : 'Main navigation'} className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
         {/* Left: Logo */}
         <Link href={`/${locale}`} className="flex items-center shrink-0 h-full py-0" aria-label={locale === 'ne' ? 'AIPL गृहपृष्ठ' : 'AIPL Home'}>
-          <Image src="/logo.png" alt="AIPL — Agricultural Investment Pvt. Ltd." width={320} height={90} className="h-10 w-auto object-contain origin-left" priority />
+          <Image src="/logo-white.png" alt="AIPL — Agricultural Investment Pvt. Ltd." width={320} height={90} className="h-10 w-auto object-contain origin-left" priority />
         </Link>
 
         {/* Center: Navigation Links */}
@@ -66,8 +66,8 @@ export function Navbar({ dict, locale }: { dict: any; locale: string }) {
                 key={link.href}
                 href={link.href}
                 aria-current={isActive ? "page" : undefined}
-                className={`text-[15px] font-medium transition-colors hover:text-forest ${
-                  isActive ? "text-forest font-semibold" : "text-gray-600"
+                className={`text-[15px] font-medium transition-colors hover:text-white/80 ${
+                  isActive ? "text-white font-bold" : "text-white/90"
                 }`}
               >
                 {link.label}
@@ -85,11 +85,11 @@ export function Navbar({ dict, locale }: { dict: any; locale: string }) {
               aria-expanded={langOpen}
               aria-haspopup="true"
               aria-label={`${locale === 'ne' ? 'भाषा छान्नुहोस्' : 'Select language'}: ${currentLangLabel}`}
-              className="flex items-center gap-1.5 text-sm font-medium text-gray-600 hover:text-gray-900 cursor-pointer p-2 rounded-md"
+              className="flex items-center gap-1.5 text-sm font-medium text-white/90 hover:text-white cursor-pointer p-2 rounded-md"
             >
               <Globe className="h-4 w-4" aria-hidden="true" />
               <span>{currentLangLabel}</span>
-              <ChevronDown className={`h-4 w-4 text-gray-400 transition-transform ${langOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+              <ChevronDown className={`h-4 w-4 text-white/70 transition-transform ${langOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
             </button>
             {langOpen && (
               <div className="absolute right-0 top-full mt-1 w-32 bg-white rounded-lg shadow-lg border border-gray-100 z-50" role="menu">
@@ -102,7 +102,7 @@ export function Navbar({ dict, locale }: { dict: any; locale: string }) {
           </div>
           <Link
             href={`/${locale}/career`}
-            className="inline-flex items-center justify-center rounded-md px-6 py-2.5 text-sm font-semibold bg-forest text-white hover:bg-forest-dark transition-colors"
+            className="inline-flex items-center justify-center rounded-md px-6 py-2.5 text-sm font-semibold bg-white text-forest hover:bg-gray-50 transition-colors"
           >
             {dict.common.nav.career}
           </Link>
@@ -111,7 +111,7 @@ export function Navbar({ dict, locale }: { dict: any; locale: string }) {
         {/* Mobile Navigation */}
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger
-            className="lg:hidden p-3 -mr-3 text-gray-700 hover:text-forest transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+            className="lg:hidden p-3 -mr-3 text-white hover:text-white/80 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
             aria-label={locale === 'ne' ? 'मेनु खोल्नुहोस्' : 'Open navigation menu'}
           >
             <Menu className="h-6 w-6" aria-hidden="true" />
