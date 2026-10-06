@@ -58,7 +58,7 @@ export function Navbar({ dict, locale }: { dict: any; locale: string }) {
         </Link>
 
         {/* Center: Navigation Links */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-2">
           {navLinks.map((link) => {
             const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`);
             return (
@@ -66,7 +66,7 @@ export function Navbar({ dict, locale }: { dict: any; locale: string }) {
                 key={link.href}
                 href={link.href}
                 aria-current={isActive ? "page" : undefined}
-                className={`text-[15px] px-4 py-2 rounded-md font-medium transition-colors ${
+                className={`text-[15px] px-3 py-2 rounded-md font-medium transition-colors ${
                   isActive ? "bg-white/20 text-white font-bold" : "text-white/90 hover:bg-white/10 hover:text-white"
                 }`}
               >
